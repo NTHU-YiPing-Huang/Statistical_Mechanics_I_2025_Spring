@@ -1,0 +1,691 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ergodicity (Do we really need it?) &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ergodicity';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Other interacting free systems" href="free_systems.html" />
+    <link rel="prev" title="Density operator formalism" href="density_matrix.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="syllabus.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="syllabus.html">
+                    Syllabus for Statistical Mechanics (I) – (2025)PHYS521000
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="How_to_ask.html">How to ask a question?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_of_physics.html">The development of physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_prob.html">Basic concepts in probability theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_1.html">Guide to Exercise 1</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="a_simple_example.html">A simple example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rev_thermodyn.html">Review of thermodynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_2.html">Guide to Exercise 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_3.html">Guide to Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="density_matrix.html">Density operator formalism</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ergodicity (Do we really need it?)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="free_systems.html">Other interacting free systems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_4.html">Guide to Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2nd_quantization.html">Second quantization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_5.html">Guide to Exercise 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_diagram.html">Phases and phase diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html">Ising models and spontaneous symmetry breaking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models_2.html">Transfer matrix method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MFT.html">Mean-field theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_6.html">Guide to Exercise 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="exercise_0.html">Exercise</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="exercise_1.html">Exercise 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_2.html">Exercise 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_3.html">Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_4.html">Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_5.html">Exercise 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_6.html">Exercise 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fergodicity.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ergodicity.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ergodicity (Do we really need it?)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergodicity-and-ensemble-average">Ergodicity and ensemble average</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-about-the-ergodicity-assumption">Problems about the ergodicity assumption</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-boltzmann-s-postulate">Derivation of Boltzmann’s postulate</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="ergodicity-do-we-really-need-it">
+<h1>Ergodicity (Do we really need it?)<a class="headerlink" href="#ergodicity-do-we-really-need-it" title="Permalink to this headline">#</a></h1>
+<p>Here we will introduce an abstract concept– ergodicity. The idea provides a connection between time-evolution and the statistical description of the system. However, prove a system is ergodic or not is in general difficult. (That’s why I skip the discussion during the lecture. For those who are interested in this concept, please check <span id="id1">[<a class="reference internal" href="markdown.html#id4" title="James Sethna. Statistical mechanics: entropy, order parameters, and complexity. Volume 14. Oxford University Press, USA, 2021.">Set21</a>]</span> <span id="id2">[<a class="reference internal" href="markdown.html#id25" title="Yoshitsugu Oono. Perspectives on Statistical Thermodynamics. Cambridge University Press, 2017.">Oon17</a>]</span> and the related references.) Therefore, the approach is usually we assume our system is ergodic. Then, we argue the <strong>time average</strong> equals <strong>micro canonical averages</strong>. So the idea of ergodicity provides a way to connect the dynamical problem to a statistical problem.</p>
+<p>Actually, we have introduce the concept of microcanonical ensemble even without addressing the ergodicity during the lecture. The reason that we introduce the concept of microcanonical ensemble in that order is to emphasis that there are different ways to formulate statistical mechanics. The route we take during the lecture basically relies on the structure of phase space volume which is a result due to thermodynamics and Boltzmann’s postulate.</p>
+<p>Once we have establish the microcanonical ensemble, then statistical mechanics can be built on top of it. Statistical mechanics also works phenomenally well. Here, we will have a short discussion about the idea of ergodicity and point out some problems/solutions that we might encountered when establishing statistical mechanics based on ergodicity.</p>
+<div class="section" id="ergodicity-and-ensemble-average">
+<h2>Ergodicity and ensemble average<a class="headerlink" href="#ergodicity-and-ensemble-average" title="Permalink to this headline">#</a></h2>
+<p>Let’s first define the notation of time average.
+The time average of observable <span class="math notranslate nohighlight">\(O\)</span> starting at initial condition <span class="math notranslate nohighlight">\(\xi(t=0)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+\overline{O(t=0)}\equiv \lim_{T\to\infty} \frac{1}{T}\int_{0}^{T} dt O(\xi(t))\text{.}
+\]</div>
+<p>Since we are interested in the stationary case, we assume at <span class="math notranslate nohighlight">\(T\to\infty\)</span> limit, the system we are interested in reaches a statonary description. In that case, the ensemble average of any physical quanttity <span class="math notranslate nohighlight">\(f\)</span> will be independent of time. That is,</p>
+<div class="math notranslate nohighlight">
+\[
+\langle f\rangle=\overline{ \langle f\rangle}\text{.}
+\]</div>
+<p>Since time average and ensemble average are two independent operation, so they commute, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\overline{ \langle f\rangle}=\langle \overline{f}\rangle \text{.}
+\]</div>
+<p>At long-time limit, the time average will be dominated by the stationary contribution. If the system is ergodic, every member of the ensemble will evolved to one another at the <span class="math notranslate nohighlight">\(T\to\infty\)</span> limit. Therefore, they are to some extend all equivalent. Also, for every member of the ensemble, they will reach the same long-time average value. Therefore, the ensemble average of the time averaged observable is just average over the same quantity <span class="math notranslate nohighlight">\(\overline{f}\)</span>. Therefore, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \overline{f}\rangle=\overline{f}\text{.}
+\]</div>
+<p>Combining above results, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\langle f\rangle=\overline{f}\text{.}
+\]</div>
+<p>This is a key result that is given by the ergodicity assumption.</p>
+</div>
+<div class="section" id="problems-about-the-ergodicity-assumption">
+<h2>Problems about the ergodicity assumption<a class="headerlink" href="#problems-about-the-ergodicity-assumption" title="Permalink to this headline">#</a></h2>
+<p>During the above discussion, we are not very precise about what do we mean by <span class="math notranslate nohighlight">\(T\to\infty\)</span>. Ergodicity says that the system will visit all possible configurations at the long time limit, but how long? If the time scale for that to be achieved is <span class="math notranslate nohighlight">\(T_{Poincaré}\sim e^N\)</span>, what is the use of this mathematical hypothesis which will never be achieved in a physical system? This time scale is the <a class="reference external" href="https://en.wikipedia.org/wiki/Poincar%C3%A9_recurrence_theorem">Poincaré cycle</a>. On the other hand, the measurment to our system is usually done within a time scale that is small comparing with the time scale of observing our system, <em>i.e.</em>, <span class="math notranslate nohighlight">\(\Delta T_{measure}\ll T_{observe}\ll T_{Poincaré}\)</span>. That also suggest, thermodynamics, which is a phenomenological theory based on experimental observables, should be justified with a small portion of the accessible phase space since the time scale for measurement is only enough for the system to reaches a small portion of the accessible phase space. How come we sample our phase space evenly and use that as a support for the connection between thermodynamics and statistical mechanics?</p>
+<p>When we think about what ergodicity really gives us, it basically rationalize the statement that every initial condition will reach a statistical mechanics ensemble description. The stationary description, thermodynamics, will be connected with ensemble description. Are there other ways to make the connection without using the ergodicity assumption? Once we reach the ensemble description we do not need the ergodicity anyway. How to reconcile the above mentioned problems?</p>
+<p>One possible way out is to notice two important phenomenological constraints:</p>
+<ul class="simple">
+<li><p>(F1) Isolated system will eventually arrive a status that the macroscopic observables are independent of time.</p></li>
+<li><p>(F2) The observation time scale for thermodynamic coordinates(extensive macroscopic observables) is very short.</p></li>
+</ul>
+<p>As we have discussed, (F2) suggest our system from an arbitary initial condition(<span class="math notranslate nohighlight">\(\xi_a\)</span>) will only visit its neighboring configurations, <span class="math notranslate nohighlight">\(\xi\in n(\xi_a)\)</span>, (a little corner of the accessible phase space) in our lab. (F1) suggest that if we wait long enough and perform the same measurement again, the same measurement will give us the same result. However, this time, our system will start in another corner of the accessible phase space with different initial condition (<span class="math notranslate nohighlight">\(\xi_b\)</span>), and again it will only visit its neighboring configurations, <span class="math notranslate nohighlight">\(\xi\in n(\xi_b)\)</span>, during the measurment time.</p>
+<p>One rational conclusion we can get is: the thermodynamics provided by the two patches of phase space, <span class="math notranslate nohighlight">\(n(\xi_a)\)</span> and <span class="math notranslate nohighlight">\(n(\xi_b)\)</span>, are identical. We never specify how big is the patch, <span class="math notranslate nohighlight">\(\xi_a\)</span> and <span class="math notranslate nohighlight">\(\xi_b\)</span> are also choosen in a arbitary fashion, but we know the thermodynamics is the same in general. A very bold but reasonalbe guess is: almost every configurations give the same thermodynamics.</p>
+<div class="figure align-default" id="single-state-ensemble-fig">
+<a class="reference internal image-reference" href="_images/single_state_ensemble.pdf"><img alt="_images/single_state_ensemble.pdf" src="_images/single_state_ensemble.pdf" style="width: 750px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Schematic picture for identical thermodynamics for every microscopic configurations.</span><a class="headerlink" href="#single-state-ensemble-fig" title="Permalink to this image">#</a></p>
+</div>
+<p>To know thermodynamics, we only need to sample a single microstate. In classial mechanics, there is no nature energy unit to isolate a configuration, so we choose a window of energy <span class="math notranslate nohighlight">\([E-\Delta E,E]\)</span> and sample all those states in microcanonical ensemble, we then put <span class="math notranslate nohighlight">\(\Delta E\to0\)</span> to reach the single state ensemble. In quantum system, the energy is quantized, we can really select a single state and use it to construct thermodynamics.</p>
+</div>
+<div class="section" id="derivation-of-boltzmann-s-postulate">
+<h2>Derivation of Boltzmann’s postulate<a class="headerlink" href="#derivation-of-boltzmann-s-postulate" title="Permalink to this headline">#</a></h2>
+<p>The above statement seems very surpricing. Can we use this understanding to get some consistency statement? For example, to understand Boltzmann’s postulate?</p>
+<p>Suppose we have a system described by a Hamiltonian, <span class="math notranslate nohighlight">\(H(\lambda)\)</span>, with an external control parameter <span class="math notranslate nohighlight">\(\lambda\)</span>. We can express the phase space volume as</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma_E=\int_{E} d\Gamma =\int d\Gamma \Theta_{\Delta E}(H-E)\text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\Theta_{\Delta E}(H-E)=1\)</span> if the energy of the system is in the shell <span class="math notranslate nohighlight">\([E-\Delta E, E]\)</span>.</p>
+<p>The microcanonical density operator is</p>
+<div class="math notranslate nohighlight">
+\[
+\rho=\frac{1}{\Gamma_E}\sum_{\epsilon} |
+\epsilon\rangle \Theta_{\Delta E}(\epsilon-E)\langle \epsilon|\text{.}
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(H|\epsilon\rangle=\epsilon|\epsilon\rangle\)</span>. The density matrix normalization condition suggest</p>
+<div class="math notranslate nohighlight">
+\[
+Tr\left[\rho\right]=1=\frac{1}{\Gamma_E}\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\text{.}
+\]</div>
+<p>By control the parameter <span class="math notranslate nohighlight">\(\lambda\)</span>, we can do work to the system. Suppose we have internal energy change <span class="math notranslate nohighlight">\(\delta E\)</span> as we vary the external parameter by <span class="math notranslate nohighlight">\(\delta \lambda\)</span>. The normalization condition should be maintained during this process, so we anticipate</p>
+<div class="math notranslate nohighlight">
+\[
+0=\delta\left[\frac{1}{\Gamma_E}\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]
+\]</div>
+<p>Here, we recall <span class="math notranslate nohighlight">\(\delta f(\vec{x})=f(\vec{x}+\delta \vec{x})-f(\vec{x})\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+&amp;\delta\left[\frac{1}{\Gamma_E}\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]\\
+&amp;= \left[\frac{1}{\Gamma_{E+\delta E}}\sum_{\epsilon} \Theta_{\Delta E}(\epsilon+\delta \epsilon-(E+\delta E))\right]
+-\left[\frac{1}{\Gamma_E}\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]
+\end{split}\]</div>
+<p>Now we can expand everything to leading order, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+RHS
+&amp;=\left[\frac{-\delta \Gamma_E}{\Gamma_E^2}\right]\left[\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]\\
+&amp;+\left[\frac{1}{\Gamma_E}\right]\left[\sum_{\epsilon} \frac{\partial}{\partial \epsilon}\Theta_{\Delta E}(\epsilon-E)\delta \epsilon+\sum_{\epsilon} \frac{\partial}{\partial E}\Theta_{\Delta E}(\epsilon-E)\delta E \right]+\mathcal{O}(\delta^2(\cdots))
+\end{split}\]</div>
+<p>We can combine the second term which gives us</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\delta \Gamma_E}{\Gamma_E}=\frac{1}{\Gamma_E}\sum_{\epsilon} \frac{\partial}{\partial (-E)}\Theta_{\Delta E}(\epsilon-E)(\delta \epsilon-\delta E) 
+\]</div>
+<p>The normalization condition suggests</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+&amp;\partial_E\left[\frac{1}{\Gamma_E}\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]=0\\
+&amp;=\frac{1}{\Gamma_E}\partial_E\left[\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]+\left(-\Gamma_E^{-2}\right)\partial_E \Gamma_E\left[\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]\text{.}
+\end{split}\]</div>
+<p>This identity gives</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{\Gamma_E}\frac{\partial}{\partial E}\left[\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]=\frac{1}{\Gamma_E^2}\frac{\partial \Gamma_E}{\partial E}\left[\sum_{\epsilon} \Theta_{\Delta E}(\epsilon-E)\right]\text{.}
+\]</div>
+<p>Most microscopic configurations give identical thermodynamics, therefore <span class="math notranslate nohighlight">\(\delta \epsilon\)</span> and <span class="math notranslate nohighlight">\(\delta' W\)</span>(the work done by tuning <span class="math notranslate nohighlight">\(\delta \lambda\)</span>) are identical for all microscopic configurations.</p>
+<p>The above equality gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\delta log(\Gamma_E)&amp;=(\delta E-\delta' W)\frac{1}{\Gamma_E}\sum_{\epsilon} \left(\frac{\partial}{\partial E}\right)\left(\Theta_{\Delta E}(\epsilon-E)\right)\\
+&amp;=\delta' Q \frac{1}{\Gamma_E}\frac{\partial \Gamma_E}{\partial E}\left(\frac{1}{\Gamma_E}\sum_{\epsilon}\Theta_{\Delta E}(\epsilon-E)\right)\\
+&amp;=\delta' Q \frac{\partial log \Gamma_E}{\partial E}\left(1\right)\text{.}
+\end{split}\]</div>
+<p>For ideal gas, we can explicitly calculate the quantitity <span class="math notranslate nohighlight">\(\frac{\partial \Gamma_E}{\partial E}=\frac{3N}{2E}=(k_BT)^{-1}\)</span>. Also, we know <span class="math notranslate nohighlight">\(\delta S=\delta' Q/T\)</span>. Comparing those relations, we have the Boltzmann’s conjucture</p>
+<div class="math notranslate nohighlight">
+\[
+\delta S=k_B\delta log \Gamma_E\text{ i.e.} S=k_Blog \Gamma_E\text{.}
+\]</div>
+<p>The seemly conter intuitive statement that every microscopic configurations gives the same thermodynamics can indeed lead to the Boltzmann’s conjucture. However, this is just a self-consistency check. The statement seems plausible, however the above derivation is not a mathematically solid proof for the statement.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="density_matrix.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Density operator formalism</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="free_systems.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Other interacting free systems</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergodicity-and-ensemble-average">Ergodicity and ensemble average</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-about-the-ergodicity-assumption">Problems about the ergodicity assumption</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-boltzmann-s-postulate">Derivation of Boltzmann’s postulate</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yi-Ping Huang (黃一平)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

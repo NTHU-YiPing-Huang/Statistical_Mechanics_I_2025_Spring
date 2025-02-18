@@ -1,0 +1,622 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 5 &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercise_5';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exercise 6" href="exercise_6.html" />
+    <link rel="prev" title="Exercise 4" href="exercise_4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="syllabus.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="syllabus.html">
+                    Syllabus for Statistical Mechanics (I) – (2025)PHYS521000
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="How_to_ask.html">How to ask a question?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_of_physics.html">The development of physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_prob.html">Basic concepts in probability theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_1.html">Guide to Exercise 1</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="a_simple_example.html">A simple example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rev_thermodyn.html">Review of thermodynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_2.html">Guide to Exercise 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_3.html">Guide to Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="density_matrix.html">Density operator formalism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity (Do we really need it?)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="free_systems.html">Other interacting free systems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_4.html">Guide to Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2nd_quantization.html">Second quantization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_5.html">Guide to Exercise 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_diagram.html">Phases and phase diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html">Ising models and spontaneous symmetry breaking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models_2.html">Transfer matrix method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MFT.html">Mean-field theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_6.html">Guide to Exercise 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="exercise_0.html">Exercise</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="exercise_1.html">Exercise 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_2.html">Exercise 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_3.html">Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_4.html">Exercise 4</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Exercise 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_6.html">Exercise 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercise_5.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/exercise_5.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise 5</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="exercise-5">
+<h1>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h1>
+<div class="tip admonition" id="prob-5-1">
+<p class="admonition-title">Problem 1: The Debye model</p>
+<p>In the material when acoustic phonon modes with <span class="math notranslate nohighlight">\(|\boldsymbol{k}|\approx 0\)</span>, the dispersion of phonon can be simplified as <span class="math notranslate nohighlight">\(\omega=c|\boldsymbol{k}|\)</span>.  Consider a system with <span class="math notranslate nohighlight">\(N\)</span> atoms in a piece of material with system volume <span class="math notranslate nohighlight">\(V=L\times L\times L\)</span>. Each atom is arranged in a cubic lattice with shortest distance between two atoms to be <span class="math notranslate nohighlight">\(a\)</span>. Usually, <span class="math notranslate nohighlight">\(a\)</span> is called the lattice constant.</p>
+<ol class="arabic simple">
+<li><p>At every wave vector <span class="math notranslate nohighlight">\(\boldsymbol{k}=\frac{2\pi}{L}(l_x,l_y,l_z)\)</span>, there are three possible polarization <span class="math notranslate nohighlight">\(\alpha=x,y,z\)</span>. Each wave vector corresponds to a simple harmonic oscillator mode with characteristic frequency <span class="math notranslate nohighlight">\(\omega(\boldsymbol{k},\alpha)=c|\boldsymbol{k}|\)</span>. What is the energy spectrum for the simple harmonic oscillator? Using <span class="math notranslate nohighlight">\(n(\boldsymbol{k},\alpha)\)</span> to represent the quantum number of the oscillator.</p></li>
+<li><p>What is the partition function, <span class="math notranslate nohighlight">\(Z_{\boldsymbol{k},\alpha}\)</span>, of this single mode simple harmonic oscillator?</p></li>
+<li><p>If we treat those oscillators as independent oscillators, they are statistically independent. As we learned in the canonical ensemble approach to the ideal gas model, we can construct the total partition function by forming a product of those independent partition functions for each modes.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+	Z=\prod_{\{\boldsymbol{k},\alpha\}}Z_{\boldsymbol{k},\alpha}
+\]</div>
+<p>Derive the expression of <span class="math notranslate nohighlight">\(\ln Z\)</span>.
+4. For large system <span class="math notranslate nohighlight">\(L\gg a\)</span>, we can replace the discrete summation over <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span> by continuous integral, <span class="math notranslate nohighlight">\(\sum_{\boldsymbol{k}}\to \left( \frac{1}{\Delta k} \right)^3\int d^{3}\boldsymbol{k}\)</span>. Assuming the continuous system is isotropic, we can replace the <span class="math notranslate nohighlight">\(d^{3}\boldsymbol{k}\)</span> by <span class="math notranslate nohighlight">\(4\pi k^2dk\)</span>. Construct the function <span class="math notranslate nohighlight">\(\ln Z\)</span> following above simplification.
+5. One key step of Debye model is to introduce a wave vector cutoff <span class="math notranslate nohighlight">\(k_{D}\)</span> according to the total number of atoms by</p>
+<div class="math notranslate nohighlight">
+\[
+	\sum_{|\boldsymbol{k}|\le k_{D}}\approx \frac{V}{(2\pi)^3}\int_{0}^{k_D}4\pi k^2dk=N
+\]</div>
+<p>Use this expression to derive the expression of <span class="math notranslate nohighlight">\(\ln Z\)</span> and E. Show the result using <span class="math notranslate nohighlight">\(N k_B\)</span> and <span class="math notranslate nohighlight">\(\hbar \omega_{D}\)</span> as parameters. Here <span class="math notranslate nohighlight">\(\hbar \omega_{D}=\hbar c k_{D}\)</span>.
+6. Derive the expression for specific heat and express the result using <span class="math notranslate nohighlight">\(k_BT_D\)</span>, here <span class="math notranslate nohighlight">\(k_BT_D=\hbar\omega_D\)</span>.
+7. The specific heat has asymptotic behavior at <span class="math notranslate nohighlight">\(T\gg T_D\)</span> and <span class="math notranslate nohighlight">\(T\ll T_{D}\)</span>. Show your calculation and discuss how the specific heat of Debye model depends on the temperature <span class="math notranslate nohighlight">\(T\)</span> at the two limits.</p>
+</div>
+<div class="tip admonition" id="prob-5-2">
+<p class="admonition-title">Problem 2: The grand canonical ensemble for Boson and Fermion Gases</p>
+<p>The free boson or fermion can be described by the grand canonical ensemble as</p>
+<div class="math notranslate nohighlight">
+\[
+	\ln Z_{GC}=(2S+1)\frac{V}{h^3}\int d^{3}\boldsymbol{p}\ln \zeta_{\pm}\left(\frac{p^2}{2m}-\mu\right)=(\pm)(2S+1)\frac{V}{h^3}\int_{0}^{\infty}4\pi p^2dp\ln \left[ 1\pm z e^{-\frac{p^2}{2mk_BT}} \right]\text{.}
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(S\)</span> represent the magnitude of the spin, <span class="math notranslate nohighlight">\(z=e^{\frac{\mu}{k_BT}}\)</span>. The sign choice of <span class="math notranslate nohighlight">\(+/-\)</span> corresponds to bosonic/fermionic systems.</p>
+<ol class="arabic simple">
+<li><p>Using the dimensionless variable <span class="math notranslate nohighlight">\(q=\frac{p}{\sqrt{2mk_BT}}\)</span>, to rewrite the expression of <span class="math notranslate nohighlight">\(\ln Z_{GC}\)</span>. Show</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+	\ln Z_{GC}=(\pm)\left( 2S+1 \right)\frac{V}{h^3}4\pi\left( 2mk_BT \right)^{\frac{3}{2}}\int_{0}^{\infty} q^2\ln\left( 1\pm z e^{-q^2} \right) dq\text{.}
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Using the expression <span class="math notranslate nohighlight">\(\ln\left( 1\pm x \right)=-\sum_{n=1}^{\infty} \frac{\left( \mp x \right)^n}{n}\)</span> to expand the above expression and perform the Gaussian integral exactly. Show</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+	\ln Z_{GC}=\left( \mp \right)(2S+1)\frac{V}{\lambda^3}\phi_{\frac{5}{2}}(\mp z)\text{,}
+\]</div>
+<p>here <span class="math notranslate nohighlight">\(\lambda=\sqrt{\frac{h^2}{2\pi mk_BT}}\)</span> and <span class="math notranslate nohighlight">\(\phi_{\alpha}(z)=\sum_{n=1}^{\infty}\frac{z^{n}}{n^{\alpha}}\)</span> is the polylog function.
+3. Calculate the average number of particles using <span class="math notranslate nohighlight">\(N=z\frac{\partial \ln Z_{GC}}{\partial z}\)</span> and show</p>
+<div class="math notranslate nohighlight">
+\[
+	N=\frac{V}{\lambda^3}(2S+1)(\mp)\phi_{\frac{3}{2}}(\mp z)\text{.}
+\]</div>
+</div>
+<div class="tip admonition" id="prob-5-3">
+<p class="admonition-title">Problem 3: Bosons in Harmonic traps</p>
+<p>Let us consider a particle in the anisotropic harmonic-oscillaotr potential <span class="math notranslate nohighlight">\(V(\boldsymbol{r})=\frac{1}{2}\left( K_x x^2+K_y y^2+K_z z^2 \right)\)</span>. Therefore, we can consider the system as three independent harmonic oscillators in three different directions <span class="math notranslate nohighlight">\(x,y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>. The corresponding energy levels can be parameterized by three non negative integers <span class="math notranslate nohighlight">\((n_x,n_y,n_z)\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+	E(n_x,n_y,n_z)=\left( n_x+\frac{1}{2} \right)\hbar \omega_x+
+\left( n_y+\frac{1}{2} \right)\hbar \omega_y+
+\left( n_z+\frac{1}{2} \right)\hbar \omega_z\text{.}
+\]</div>
+<ol class="arabic simple">
+<li><p>Let us consider <span class="math notranslate nohighlight">\(n_i\)</span> are continuous variables and neglect the zero-point energies (The <span class="math notranslate nohighlight">\(\frac{1}{2}\hbar \omega_i\)</span> in <span class="math notranslate nohighlight">\(E(n_x,n_y,n_z)\)</span>.), we can simplify the energy as <span class="math notranslate nohighlight">\(E\approx \varepsilon_x+\varepsilon_y+\varepsilon_z\)</span> where <span class="math notranslate nohighlight">\(\varepsilon_i=n_i\hbar \omega_i\)</span>. If we define <span class="math notranslate nohighlight">\(G(E)\)</span> as the number of states below energy a specific energy <span class="math notranslate nohighlight">\(E\)</span>. Derive the expression of <span class="math notranslate nohighlight">\(G(E)\)</span> in terms of <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(\omega_x,\omega_y,\omega_z\)</span> and <span class="math notranslate nohighlight">\(\hbar\)</span>. (Hint: There are several way to derive this result. One approach is to consider the  problem in the <span class="math notranslate nohighlight">\((n_x,n_y,n_z)\)</span> space. What is the geometric meaning of the states below energy <span class="math notranslate nohighlight">\(E\)</span>?)</p></li>
+<li><p>Another way to understand density of state is <span class="math notranslate nohighlight">\(g(E)=\frac{d G(E)}{d E}\)</span>. Using above expression to get the density of states.</p></li>
+<li><p>We also know from the lecture, we can evaluate the particles in the excited statesusing</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+	N_{ex}=\int_{0}^{\infty}dE g(E) \frac{1}{e^{E/k_BT}-1}\text{.}
+\]</div>
+<p>Here, we assume <span class="math notranslate nohighlight">\(N_{ex}\)</span> reaches its maximum for <span class="math notranslate nohighlight">\(\mu=0\)</span>. The definition of the transition temperature, <span class="math notranslate nohighlight">\(T_c\)</span>, of Bose-Einstein condensation is when the total number of particles can be just accommodated in excited states. That is,</p>
+<div class="math notranslate nohighlight">
+\[
+	N=N_{ex}(T=T_c,\mu=0)=\int_{0}^{\infty}dE g(E) \frac{1}{e^{E/k_BT}-1}\text{.}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\int_{0}^{\infty} dx \frac{x^{\alpha-1}}{e^{x}-1}=\Gamma(\alpha)\zeta(\alpha)\)</span>. Here, <span class="math notranslate nohighlight">\(\zeta(\alpha)=\sum_{n=1}^{\infty}n^{-\alpha}\)</span> is the Riemann zeta function and <span class="math notranslate nohighlight">\(\Gamma(\alpha)\)</span> is the gamma function.
+Derive the transition temperature of this system and express the result using <span class="math notranslate nohighlight">\(N, \omega_x,\omega_y,\omega_z\)</span> and the Riemann zeta function.
+\end{enumerate}</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="exercise_4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise 4</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exercise_6.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise 6</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yi-Ping Huang (黃一平)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

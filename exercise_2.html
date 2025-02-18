@@ -1,0 +1,704 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 2 &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercise_2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exercise 3" href="exercise_3.html" />
+    <link rel="prev" title="Exercise 1" href="exercise_1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="syllabus.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="syllabus.html">
+                    Syllabus for Statistical Mechanics (I) – (2025)PHYS521000
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="How_to_ask.html">How to ask a question?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_of_physics.html">The development of physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_prob.html">Basic concepts in probability theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_1.html">Guide to Exercise 1</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="a_simple_example.html">A simple example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rev_thermodyn.html">Review of thermodynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_2.html">Guide to Exercise 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_3.html">Guide to Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="density_matrix.html">Density operator formalism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity (Do we really need it?)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="free_systems.html">Other interacting free systems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_4.html">Guide to Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2nd_quantization.html">Second quantization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_5.html">Guide to Exercise 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_diagram.html">Phases and phase diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html">Ising models and spontaneous symmetry breaking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models_2.html">Transfer matrix method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MFT.html">Mean-field theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_6.html">Guide to Exercise 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="exercise_0.html">Exercise</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="exercise_1.html">Exercise 1</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Exercise 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_3.html">Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_4.html">Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_5.html">Exercise 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_6.html">Exercise 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercise_2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/exercise_2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="exercise-2">
+<span id="id1"></span><h1>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h1>
+<div class="tip admonition" id="prob-2-1">
+<p class="admonition-title">Problem 1 (Diffusion equation in <span class="math notranslate nohighlight">\(d\)</span> dimension)</p>
+<p>The diffusion equation can be generalized into <span class="math notranslate nohighlight">\(d\)</span> dimension as</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{\partial \rho}{\partial t}=D\nabla^2 \rho\text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\nabla=\left( \frac{\partial}{\partial x_1},\frac{\partial}{\partial x_2},\dots,\frac{\partial}{\partial x_d} \right)\)</span>. We consider <span class="math notranslate nohighlight">\(t&gt;0\)</span> for our convenience.
+As in 1D, we can defined the Green’s function <span class="math notranslate nohighlight">\(G(\boldsymbol{x},t)\)</span> to be the time evolution of the initial density <span class="math notranslate nohighlight">\(G(\boldsymbol{x},0)=\delta(\boldsymbol{x})\)</span> with a particle sits at the origin. <span class="math notranslate nohighlight">\(G(\boldsymbol{x},t)\)</span> needs to satisfy the diffusion equation</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{\partial G(\boldsymbol{x},t)}{\partial t}=D\nabla^2 G(\boldsymbol{x},t)\text{.}
+\]</div>
+<p>Since the diffusion equation in <span class="math notranslate nohighlight">\(d\)</span> dimension also has translational symmetry, we can follow the same steps as we did in <span class="math notranslate nohighlight">\(d=1\)</span> to derive the Green’s function <span class="math notranslate nohighlight">\(G(\boldsymbol{x},t)\)</span>.
+Show your derivation at each step and derive</p>
+<div class="math notranslate nohighlight">
+\[
+	G(\boldsymbol{x},t)=\int \frac{d^{d} q}{(2\pi)^{d}}e^{i\boldsymbol{q}\cdot \boldsymbol{x}}\tilde{G}_{\boldsymbol{q}}(t)=\frac{1}{\left( 4\pi D t \right)^{\frac{d}{2}}}e^{-|x|^2/4Dt}\text{.}
+\]</div>
+</div>
+<div class="tip admonition" id="prob-2-2">
+<p class="admonition-title">Problem 2 (Simplified version of random matrix theory)</p>
+<p>The random matrix theory is invented by Eugene Wigner to describe the spectra of nuclei of heavy atoms. To introduce the topic properly probably requires another year-long course. So we are not going to discuss the details of it. However, the main idea can be demonstrated using <span class="math notranslate nohighlight">\(2\times 2\)</span> Hamiltonians. That can be done during a homework problem of statistical mechanics (I).
+Consider a set of <span class="math notranslate nohighlight">\(2\times 2\)</span> Hamiltonians,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	\widehat{H}=\left(
+	\begin{array}{cc}
+		\varepsilon_1 &amp;\frac{V}{\sqrt{2}}\\
+		\frac{V^{*}}{\sqrt{2}} &amp;\varepsilon_2
+	\end{array}
+	\right)\text{.}
+\end{split}\]</div>
+<p>One can easily diagonalize the above Hamiltonian and get the eigenvalues as</p>
+<div class="math notranslate nohighlight">
+\[
+	E_{1,2}=\frac{\varepsilon_1+\varepsilon_2}{2}\pm\frac{1}{2}\sqrt{\left( \varepsilon_1-\varepsilon_2 \right)^2+2|V|^2}\text{.}
+\]</div>
+<p>This is the level repulsion physics for a general (no symmetry constraints) <span class="math notranslate nohighlight">\(2\times 2\)</span> Hamiltonian.</p>
+<ol class="arabic">
+<li><p>Consider the matrix elements ,<span class="math notranslate nohighlight">\(\varepsilon_1\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_2\)</span> and <span class="math notranslate nohighlight">\(V\)</span> are random real numbers extracted from Gaussian distribution with width of the distribution to be <span class="math notranslate nohighlight">\(\sigma\)</span>. The statistics of the level separations <span class="math notranslate nohighlight">\(P(E_1-E_2=\omega)\equiv P(\omega)\)</span> can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+		P(\omega)=\frac{1}{(2\pi)^{3/2}\sigma^3}\int d\varepsilon_1 \int d\varepsilon_2\int dV\delta\left( \sqrt{(\varepsilon_1-\varepsilon_2)^2+2V^2}-\omega \right) \exp\left[ -\frac{\varepsilon_1^2+\varepsilon_2^2+V^2}{2\sigma^2} \right]\text{.}
+	\]</div>
+</li>
+</ol>
+<p>What is <span class="math notranslate nohighlight">\(P(\omega)\)</span>?
+(<em>Hint: Evaluate this integral by change of variable <span class="math notranslate nohighlight">\(\varepsilon_2=\varepsilon_1+\sqrt{2}\xi\)</span> and integrate <span class="math notranslate nohighlight">\(\varepsilon_1\)</span>. After that, <span class="math notranslate nohighlight">\(\varepsilon_2\)</span> and <span class="math notranslate nohighlight">\(V\)</span> will look symmetric, one can use the polar coordinates to simplify the integral further and get the result.</em>)
+2. Now let’s consider <span class="math notranslate nohighlight">\(V\)</span> to be complex in general. That means both the real part and the imaginary part of <span class="math notranslate nohighlight">\(V\)</span> are random. Consider the real part and imaginary part are also random numbers extracted from Gaussian distribution functions with width <span class="math notranslate nohighlight">\(\sigma\)</span> and repeat the calculation in the previous question. Find <span class="math notranslate nohighlight">\(P(\omega)\)</span> in this case.</p>
+<p>The random matrix theory is initially invented for the spectra of nuclei of heavy atoms initially. However, it becomes one of the key concept to explore the physics of thermalization which is an important problem in the past decade or so in quantum statistical mechanics.</p>
+</div>
+<div class="tip admonition" id="prob-2-3">
+<p class="admonition-title">Problem 3 (Why large <span class="math notranslate nohighlight">\(N\)</span> is useful? Properties of <span class="math notranslate nohighlight">\(N\)</span>-dimensional space:)</p>
+<p>In statistical mechanics, we work in the phase space with dimension <span class="math notranslate nohighlight">\(N\)</span> to be large. Such space has properties that are very counter intuitive. Since <span class="math notranslate nohighlight">\(N\)</span> is large, so we might be able to use it as a big parameter and construct the saddle point approximation (Which is useful to expand our analytic understanding). So we can see the fact that <span class="math notranslate nohighlight">\(N\)</span> is large actually simplifies our problem if we use it wisely. We discuss some properties of the <span class="math notranslate nohighlight">\(N\)</span>-dimensional space.</p>
+<ol class="arabic">
+<li><p>From dimension analysis, we know the volume of a sphere with radius <span class="math notranslate nohighlight">\(R\)</span> in <span class="math notranslate nohighlight">\(N\)</span> dimension should be proportional with <span class="math notranslate nohighlight">\(R^{N}\)</span>. Explain why it is so. (Hint: The definition of volume in <span class="math notranslate nohighlight">\(N\)</span> dimensional space is <span class="math notranslate nohighlight">\(\int \prod_{i=1}^{N}dx_{i}\)</span>. One can start from this expression.)</p></li>
+<li><p>Above observation suggests we can define the volume of a sphere with radius <span class="math notranslate nohighlight">\(R\)</span> as <span class="math notranslate nohighlight">\(\text{Vol}_N(R)=C_N R^{N}\)</span> in <span class="math notranslate nohighlight">\(N\)</span> dimension. Suppose we have a sphere with radius <span class="math notranslate nohighlight">\(R-\delta R\)</span>(with <span class="math notranslate nohighlight">\(\delta R\gtrsim0\)</span>) which is smaller than <span class="math notranslate nohighlight">\(R\)</span>. What is the ratio <span class="math notranslate nohighlight">\(r_{N}\equiv\frac{\text{Vol}_N(R)-\text{Vol}_N(R-\delta R)}{\text{Vol}_N(R)}\)</span> at the <span class="math notranslate nohighlight">\(N\to\infty\)</span> limit? The ratio is the ratio between volume of the thin shell with radius <span class="math notranslate nohighlight">\(R\)</span> and the volume of the whole sphere with radius <span class="math notranslate nohighlight">\(R\)</span>. What is the meaning of your result? (Hint: Before we do any calculation, there could be two possibilities: (1) <span class="math notranslate nohighlight">\(\lim_{N\to\infty} r_N\to0\)</span>, (2)<span class="math notranslate nohighlight">\(\lim_{N\to\infty} r_N\to1\)</span>. (1) means the outer shell contributes very little to the total volume. (2) means the outer shell contributes almost 100% of the total volume. Which case fits your result?)</p></li>
+<li><p>The surface of the sphere with <span class="math notranslate nohighlight">\(R\)</span> radius is given by <span class="math notranslate nohighlight">\(S_N(R)=\left.S_N(R)\right|_{R=1}R^{N-1}\)</span>. Following the steps and show that <span class="math notranslate nohighlight">\(S_N(R)=\frac{2\pi^{N/2}}{\Gamma(N/2)}R^{N-1}\)</span>. Here, <span class="math notranslate nohighlight">\(\Gamma(z)=\int_{0}^{\infty}dt e^{-t}t^{z-1}\)</span> is the Euler Gamma function.</p>
+<ol class="arabic simple">
+<li><p>Evaluate the <span class="math notranslate nohighlight">\(N\)</span> dimensional Gaussian integral.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+	G_{N}=\int\prod_{i=1}^{N}dx_{i}exp\left( -\sum_{i=1}^{N}x_i^2 \right)\text{.}
+	\]</div>
+<ol class="arabic simple" start="2">
+<li><p>We can define <span class="math notranslate nohighlight">\(a^2=\sum_{i}x_i^2\)</span>, and work in the polar coordinate to express <span class="math notranslate nohighlight">\(G_N\)</span> as</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+		G_{N}&amp;=&amp; \int_{0}^{\infty}exp\left( -a^2 \right)S_N(a)da\nonumber\\
+		&amp;=&amp;  S_N(1)\int_{0}^{\infty} a^{N-1}exp(-a^2)da\text{.}
+	\end{split}\]</div>
+<p>Using the definition of Euler Gamma function, <span class="math notranslate nohighlight">\(\Gamma(z)=\int_{0}^{\infty}dt e^{-t}t^{z-1}\)</span>, to derive the expression of <span class="math notranslate nohighlight">\(S_{N}(1)\)</span>. Show <span class="math notranslate nohighlight">\(S_{N}(R)=\frac{2\pi^{N/2}}{\Gamma(N/2)}R^{N-1}\)</span>.</p>
+</li>
+<li><p>Using <span class="math notranslate nohighlight">\(S_{N}(R)\)</span>, we can derive the volume of the <span class="math notranslate nohighlight">\(N\)</span> dimensional sphere with radius <span class="math notranslate nohighlight">\(R\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+		\text{Vol}_N(R)=C_NR^N\text{.}
+	\]</div>
+<p>Find the expression of <span class="math notranslate nohighlight">\(C_N\)</span>.</p>
+</li>
+<li><p>The volume of the <span class="math notranslate nohighlight">\(N\)</span> dimensional sphere with radius <span class="math notranslate nohighlight">\(R\)</span> can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+		\int\left(\prod_{i=1}^{N}dx_i\right)\theta(R^2-\sum_{j=1}^{N}x_{j}^2)\text{.}
+	\]</div>
+<p>The distribution of the sphere’s projection onto one of the axes is</p>
+<div class="math notranslate nohighlight">
+\[
+		\rho(x_1)=\int \left(\prod_{i=2}^{N}dx_i\right)\theta\left( R^2-x_1^2-\sum_{j=2}^{N}x_j^2 \right)\text{.}
+	\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\theta(x)=1\)</span> if <span class="math notranslate nohighlight">\(x\ge0\)</span>, otherwise <span class="math notranslate nohighlight">\(\theta(x)=0\)</span>.</p>
+<ol class="arabic simple">
+<li><p>The integral on the right-hand side is the volume of the sphere in <span class="math notranslate nohighlight">\((N-1)\)</span>-dimensional space. What is the radius of the <span class="math notranslate nohighlight">\((N-1)\)</span>-dimensional sphere? Using the result of previous problems to show <span class="math notranslate nohighlight">\(\frac{\rho(x_1)}{R^{N-1}}=C_{N-1} exp\left[ \frac{N-1}{2}\ln[(1-\frac{x_1^2}{R^2})] \right]\)</span>.</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(N\)</span> is large, <span class="math notranslate nohighlight">\(\frac{\rho(x_1)}{R^{N-1}}\)</span> goes to zero quickly as <span class="math notranslate nohighlight">\(x_1\)</span> moves away from zero. Therefore, we can expand the exponent into a Taylor series around <span class="math notranslate nohighlight">\(x_1=0\)</span>. Perform the Taylor expansion and show <span class="math notranslate nohighlight">\(\rho(x_1)\)</span> could be approximate by a Gaussian function as <span class="math notranslate nohighlight">\(\frac{\rho(x_1)}{R^{N-1}}\approx C_{N-1}\exp\left[ -\frac{N-1}{2R^2} x_1^2\right]\)</span>.</p></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="tip admonition" id="prob-2-4">
+<p class="admonition-title">Problem 4 (Universality beyond the ideal gas model:)</p>
+<p>The ideal gas model gives the state equation <span class="math notranslate nohighlight">\(P\frac{V}{N}=k_BT\)</span>. However, the model is pretty artificial that it consider particles as mathematical points. The Van der Waals equation take into the account that</p>
+<ul>
+<li><p>The particles are not mathematical points, but with some intrinsic volume. This leads to</p>
+<div class="math notranslate nohighlight">
+\[
+		P\left( \frac{V}{N}-b \right)=k_BT\text{.}
+	\]</div>
+</li>
+<li><p>The particles will collide and put pressure on the container. However, the particles will interact(electric dipole, magnetic dipole, \ldots) with each other and modify the expression of pressure. This leads to</p>
+<div class="math notranslate nohighlight">
+\[
+		\left( P-Q \right)\left( \frac{V}{N}-b \right)=k_BT\text{.}
+	\]</div>
+<div class="figure align-default" id="vdw-fig">
+<a class="reference internal image-reference" href="_images/VdW.pdf"><img alt="_images/VdW.pdf" src="_images/VdW.pdf" style="width: 750px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">The toy model for interaction in the Van der Waals model. The dashed lines represent the interaction between the reference particle and its neighbors. (a) represents the case where the reference particle is deep inside the container and cannot see the boundary of the container. (b) represents the case where the reference particle is near the boundary of the container.</span><a class="headerlink" href="#vdw-fig" title="Permalink to this image">#</a></p>
+</div>
+<p>Let’s try to use a simple averaged picture to estimate <span class="math notranslate nohighlight">\(Q\)</span>. The interaction between the particles are complicated. They could depends on the distance between particles as in <a class="reference internal" href="#vdw-fig"><span class="std std-numref">Fig. 11</span></a>(a). Let’s assume the potential, <span class="math notranslate nohighlight">\(U\)</span>, describes the interaction between a particle deep inside the container and the rest of the particles near it. And <span class="math notranslate nohighlight">\(U_W\)</span> to be the potential when the reference particle is near the wall of the container. From <a class="reference internal" href="#vdw-fig"><span class="std std-numref">Fig. 11</span></a>(b), we estimate <span class="math notranslate nohighlight">\(U_W=\frac{U}{2}\)</span>.</p>
+<p>The density deep inside the container is <span class="math notranslate nohighlight">\(\frac{N}{V}\)</span>, we expect the density near the wall of the container to be modified. A rough estimation is</p>
+<div class="math notranslate nohighlight">
+\[
+		\left.\frac{N}{V}\right|_{\text{Wall}}=\frac{N}{V} \mathcal{F}(U_W-U)\xrightarrow{?}\frac{N}{V} exp\left[ -\frac{1}{k_BT}\left( U_{W}-U \right) \right]=\frac{N}{V}exp\left[ \frac{U}{2k_BT} \right]
+	\]</div>
+<p>At this point, it is not clear why it is reasonable to estimate the effect of interaction in this way (That is, we don’t know where <span class="math notranslate nohighlight">\(\mathcal{F}(U_W-U)\approx exp\left[ -\frac{1}{k_BT}\left( U_{W}-U \right) \right]\)</span> came from. It is the Boltzman factor that we will encounter several times later in the lecture. Let’s just accept it as a reasonalbe approximation for now.).</p>
+<p><span class="math notranslate nohighlight">\(U\)</span> should be proportional with the density of the system, so we can write <span class="math notranslate nohighlight">\(U=\frac{N}{V} u_0\)</span> where <span class="math notranslate nohighlight">\(u_{0}=\int_{B(0)}d^{3}\boldsymbol{r} u(r)\)</span>. Here we use <span class="math notranslate nohighlight">\(B(0)\)</span> to denote the integral region near the reference particle and <span class="math notranslate nohighlight">\(u(r)\)</span> is the two particle potential with <span class="math notranslate nohighlight">\(r\)</span> denote the distance to the reference particle. Therefore, we have</p>
+<div class="math notranslate nohighlight">
+\[
+		\left.\frac{N}{V}\right|_{\text{Wall}}=\frac{N}{V} exp\left[ \frac{Nu_0}{2Vk_BT} \right]\text{.}
+	\]</div>
+<p>When <span class="math notranslate nohighlight">\(u_0&gt;0(u_0&lt;0)\)</span>, we have a repulsive(attractive) potential between particles. The density near the wall will be larger(smaller) comparing with the density in the bulk.
+Using this picture, it is clear why we have the last equality. Since near the boundary, <span class="math notranslate nohighlight">\(U_W\)</span> should only include half of its neighbors, so we have <span class="math notranslate nohighlight">\(U_W=U/2\)</span>.</p>
+</li>
+</ul>
+<ol class="arabic">
+<li><p><em>Interaction correction to the pressure</em>: Assume we can apply the ideal gas equation near the wall of the container</p>
+<div class="math notranslate nohighlight">
+\[
+		P=k_BT\left( \left.\frac{N}{V}\right|_{Wall} \right)\text{.}
+	\]</div>
+<p>Assume we are still at the dilute gas limit. Find the expression of <span class="math notranslate nohighlight">\(P\)</span> to leading order correction in <span class="math notranslate nohighlight">\(bN/V\equiv bv^{-1}\)</span> beyond the ideal gas equation by expanding the exponent. With this correction, we can modify the ideal gas model and derive the Van der Waals equation as</p>
+<div class="math notranslate nohighlight">
+\[
+		\left( P+\frac{a}{v^2} \right)(v-b)=k_BT\text{.}
+	\]</div>
+<p>Derive the expression of <span class="math notranslate nohighlight">\(a\)</span> using <span class="math notranslate nohighlight">\(u_0\)</span>.</p>
+</li>
+<li><p>Expand the Van der Waals equation, one will get a cubic equation <span class="math notranslate nohighlight">\(F_{VdW}(v)=0\)</span>. The cubic equation has different possibilities of its solution:</p>
+<ul class="simple">
+<li><p>three real roots of <span class="math notranslate nohighlight">\(v\)</span>.</p></li>
+<li><p>one real root of <span class="math notranslate nohighlight">\(v\)</span> and a pair of complex root of <span class="math notranslate nohighlight">\(v\)</span>.</p></li>
+<li><p>three degenerate real root <span class="math notranslate nohighlight">\(v=v_c\)</span>. This corresponds to the \emph{critical point} of the system.
+Here, we only focus on the last case which corresponds to the case we have <span class="math notranslate nohighlight">\(F_{VdW}(v)\propto (v-v_c)^3\)</span>. Assuming the corresponding temperature and pressure in this case to be denoted as <span class="math notranslate nohighlight">\(T_c\)</span> and <span class="math notranslate nohighlight">\(P_c\)</span>.
+Find the expression of <span class="math notranslate nohighlight">\(T_c,P_c\)</span> and <span class="math notranslate nohighlight">\(v_c\)</span> using the parameter <span class="math notranslate nohighlight">\(a,b\)</span> in the Van der Waals equation.</p></li>
+</ul>
+</li>
+<li><p>Show that <span class="math notranslate nohighlight">\(\frac{P_c v_c}{k_BT_c}\)</span> is a constant independent of the microscopic detail parameters <span class="math notranslate nohighlight">\(a,b\)</span>. The meaning of this expression is: for different systems, we will need different microscopic parameter <span class="math notranslate nohighlight">\(a\)</span> to describe how they interact and <span class="math notranslate nohighlight">\(b\)</span> to describe the correction due to the size of the particles. In general, <span class="math notranslate nohighlight">\(a,b\)</span> differs from system to system. However, at the critical point, they all satisfy this relation that the value of the product <span class="math notranslate nohighlight">\(\frac{P_c v_c}{k_BT_c}\)</span> is the same constant.</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="exercise_1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exercise_3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise 3</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yi-Ping Huang (黃一平)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

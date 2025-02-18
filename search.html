@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - Statistical Mechanics (I)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
   
   
   
@@ -33,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -46,6 +47,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -150,12 +152,86 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="syllabus.html">
-                    Statistical Mechanics (I)
+                    Syllabus for Statistical Mechanics (I) – (2025)PHYS521000
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="How_to_ask.html">How to ask a question?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_of_physics.html">The development of physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_prob.html">Basic concepts in probability theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_1.html">Guide to Exercise 1</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="a_simple_example.html">A simple example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rev_thermodyn.html">Review of thermodynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_2.html">Guide to Exercise 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_3.html">Guide to Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="density_matrix.html">Density operator formalism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity (Do we really need it?)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="free_systems.html">Other interacting free systems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_4.html">Guide to Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2nd_quantization.html">Second quantization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_5.html">Guide to Exercise 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_diagram.html">Phases and phase diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html">Ising models and spontaneous symmetry breaking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models_2.html">Transfer matrix method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MFT.html">Mean-field theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_6.html">Guide to Exercise 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="exercise_0.html">Exercise</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="exercise_1.html">Exercise 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_2.html">Exercise 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_3.html">Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_4.html">Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_5.html">Exercise 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_6.html">Exercise 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
 </ul>
 
     </div>
@@ -351,7 +427,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Yi-Ping Huang
+By Yi-Ping Huang (黃一平)
 </p>
 
   </div>

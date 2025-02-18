@@ -1,0 +1,688 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfer matrix method &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ising_models_2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Mean-field theory" href="MFT.html" />
+    <link rel="prev" title="Ising models and spontaneous symmetry breaking" href="Ising_models.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="syllabus.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="syllabus.html">
+                    Syllabus for Statistical Mechanics (I) – (2025)PHYS521000
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="How_to_ask.html">How to ask a question?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_of_physics.html">The development of physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_prob.html">Basic concepts in probability theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_1.html">Guide to Exercise 1</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="a_simple_example.html">A simple example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rev_thermodyn.html">Review of thermodynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_2.html">Guide to Exercise 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_3.html">Guide to Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="density_matrix.html">Density operator formalism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity (Do we really need it?)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="free_systems.html">Other interacting free systems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_4.html">Guide to Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2nd_quantization.html">Second quantization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_5.html">Guide to Exercise 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="phase_diagram.html">Phases and phase diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html">Ising models and spontaneous symmetry breaking</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Transfer matrix method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MFT.html">Mean-field theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_6.html">Guide to Exercise 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="exercise_0.html">Exercise</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="exercise_1.html">Exercise 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_2.html">Exercise 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_3.html">Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_4.html">Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_5.html">Exercise 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_6.html">Exercise 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FIsing_models_2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Ising_models_2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Transfer matrix method</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="transfer-matrix-method">
+<h1>Transfer matrix method<a class="headerlink" href="#transfer-matrix-method" title="Permalink to this headline">#</a></h1>
+<p>Now we are going to solve the one-dimensional Ising model with external field. Now we <strong>change the definition of our notation</strong> to make our discussion more concise.</p>
+<p>We define our Hamiltonian as</p>
+<div class="math notranslate nohighlight">
+\[
+-\beta H_{\Omega}(\{S_i\})=\underbrace{\beta H}_{\beta}\sum_iS_i+\underbrace{\beta J}_{K}\sum_iS_iS_{i+1}; J&gt;0\text{.}
+\]</div>
+<p>The partition function is</p>
+<div class="math notranslate nohighlight">
+\[
+Z(h,K,N(\Omega))=Tr\left[e^{h\sum_iS_i+K\sum_iS_iS_{i+1}}\right]\text{.}
+\]</div>
+<p>Let’s start from the simple <span class="math notranslate nohighlight">\(h=0\)</span> limit.
+When <span class="math notranslate nohighlight">\(h=0\)</span>, we can define the bond variables <span class="math notranslate nohighlight">\(\eta_{i,i+1}\equiv S_iS_{i+1}\)</span>. By definition, <span class="math notranslate nohighlight">\(\eta_{i,i+1}=\pm1\)</span>. Since the bond variables do not couple with each other, the Hamiltonian written in the bond variable is effectively another Ising model but with only magnetic field, <span class="math notranslate nohighlight">\(K\)</span>. Because of that, the partition function is simply <span class="math notranslate nohighlight">\(Z(h=0,K,N)=2(2 \cosh K)^{N-1}\)</span>.</p>
+<p>This approach cannot be generalized to the case with magnetic field <span class="math notranslate nohighlight">\(h\)</span>. Here we introduce the transfer matrix method and use it to overcome this difficulty.</p>
+<p>Let’s look at one bond and consider all the possible configurations on this single bond, <span class="math notranslate nohighlight">\((i,i+1)\)</span>. Since each bond has two spins coupled together, we can use a matrix to represent the configurations. The row index is corresponds to the spin <span class="math notranslate nohighlight">\(i\)</span> and the column index corresponds to the spin <span class="math notranslate nohighlight">\(i+1\)</span>. Explicitly, we can write down the spin configuration and the corresponding Boltzmann factors as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left(
+\begin{array}{cc}
+\uparrow_{i} \uparrow_{i+1} &amp;\uparrow_{i} \downarrow_{i+1}\\
+\downarrow_{i} \uparrow_{i+1} &amp; \downarrow_{i} \downarrow_{i+1}
+\end{array}
+\right)
+\xrightarrow{\text{Boltzmann factors}}
+\left(
+\begin{array}{cc}
+e^{K+2h} &amp;e^{-K}\\
+e^{-K} &amp; e^{K-2h}
+\end{array}
+\right)\equiv \widetilde{T}^{(i,i+1)}
+\end{split}\]</div>
+<p>Note the <span class="math notranslate nohighlight">\((i,i+1)\)</span> is just the label of the bond not the row/column indices.</p>
+<p>In the non-interacting case, we are familiar with the structure that the Boltzmann factor for the full system is just the product of the Boltzmann factors of individual mode since the exponents add up and give us the total energy. Can we do that for our one-dimensional nearest-neighbor coupled systems? Let’s take two nearby bonds, <span class="math notranslate nohighlight">\((i-1,i)\)</span> and <span class="math notranslate nohighlight">\((i,i+1)\)</span> and do the matrix product and see what will it lead to.</p>
+<p>Let’s focus on the configuration first. Here we use <span class="math notranslate nohighlight">\(\boxtimes\)</span> to denote the concept of combine the two configurations to form another configuration. We also use <span class="math notranslate nohighlight">\(\boxplus\)</span> to denote the concept of collecting configurations.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left(
+\begin{array}{cc}
+\uparrow_{i-1} \underline{\uparrow_{i}} &amp;\uparrow_{i-1} \underline{\underline{\downarrow_{i}}}\\
+\downarrow_{i-1} \uparrow_{i} &amp; \downarrow_{i-1} \downarrow_{i}
+\end{array}
+\right)
+\boxtimes
+\left(
+\begin{array}{cc}
+\underline{\uparrow_{i}} \uparrow_{i+1} &amp;\uparrow_{i} \downarrow_{i+1}\\
+\underline{\underline{\downarrow_{i}}} \uparrow_{i+1} &amp; \downarrow_{i} \downarrow_{i+1}
+\end{array}
+\right)\\
+=
+\left(
+\begin{array}{cc}
+\uparrow_{i-1} \underline{\uparrow_{i}} \uparrow_{i+1}\boxplus \uparrow_{i-1} \underline{\underline{\downarrow_{i}}} \uparrow_{i+1}
+&amp;
+\downarrow_{i-1} \uparrow_{i} \uparrow_{i+1}\boxplus \downarrow_{i-1} \downarrow_{i} \uparrow_{i+1}
+\\
+\uparrow_{i-1} \uparrow_{i} \downarrow_{i+1}\boxplus \uparrow_{i-1} \downarrow_{i} \downarrow_{i+1}
+&amp; 
+\downarrow_{i-1} \uparrow_{i} \downarrow_{i+1}\boxplus \downarrow_{i-1} \downarrow_{i} \downarrow_{i+1}
+\end{array}
+\right)
+\end{split}\]</div>
+<p>We can see we generate all the <span class="math notranslate nohighlight">\(2^3\)</span> configurations for the three spin system by this formal operation.(In fact, the <span class="math notranslate nohighlight">\(\boxplus\)</span> notation is just to help understand the structure of the matrix product. The true meaning should corresponds to a rank 3 tensor <span class="math notranslate nohighlight">\(T_{S_{i-1},S_i,S_{i+1}}\)</span>) How about the Boltzmann’s factors?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\widetilde{T}^{(i-1,i)}\widetilde{T}^{(i,i+1)}=
+\left(
+\begin{array}{cc}
+e^{K+2h} &amp;e^{-K}\\
+e^{-K} &amp; e^{K-2h}
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+e^{K+2h} &amp;e^{-K}\\
+e^{-K} &amp; e^{K-2h}
+\end{array}
+\right)\\
+=
+\left(
+\begin{array}{cc}
+e^{K+2h+K+2h}+e^{-K-K} &amp;e^{K+2h-K}+e^{-K+K-2h}\\
+e^{-K+K+2h}+e^{K-2h-K} &amp; e^{-K-K}+e^{K-2h+K-2h}
+\end{array}
+\right)
+\end{split}\]</div>
+<p>We can see the representation is very promising. Even thought we are not yet there. All the spin configurations are included. However, the product of the matrix <span class="math notranslate nohighlight">\(\widetilde{T}_{i-1,i}\widetilde{T}_{i,i+1}\)</span> does not give the correct Boltzmann factors for the corresponding spin configurations.
+For example, the Boltzmann factor for the configuration <span class="math notranslate nohighlight">\(\uparrow_{i-1}\uparrow_{i}\uparrow_{i+1}\)</span> should be <span class="math notranslate nohighlight">\(e^{2K+3h}\)</span> not <span class="math notranslate nohighlight">\(e^{2K+4h}\)</span>. If we think through the process, we can immediate realize the discrepancy came from the double counting of energy due to the magnetic field on site <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>We immediate discover how to fix our problem. We can consider a system with periodic boundary condition and modify the matrix <span class="math notranslate nohighlight">\(\widetilde{T}_{i,i+1}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\widetilde{T}^{(i,i+1)}\to T^{(i,i+1)}=T\equiv
+\left(
+\begin{array}{cc}
+e^{K+h} &amp;e^{-K}\\
+e^{-K} &amp; e^{K-h}
+\end{array}
+\right)\text{.}
+\end{split}\]</div>
+<p>The matrix <span class="math notranslate nohighlight">\(T\)</span> is the transfer matrix of the Ising model. We can use that to express the partition function as</p>
+<div class="math notranslate nohighlight">
+\[
+Z(h,K,N(\Omega))=\sum_{S_1=\uparrow,\downarrow}\sum_{S_2=\uparrow,\downarrow}\cdots\sum_{S_{N(\Omega)}=\uparrow,\downarrow} [T^{(1,2)}]_{S_1,S_2}[T^{(2,3)}]_{S_2,S_3}\cdots[T^{N(\Omega),1}]_{S_{N(\Omega),S_1}}=Tr[T^{N(\Omega)}]\text{.}
+\]</div>
+<p>The above expression is useful, since we can simplify the calculation significantly by diagonalize <span class="math notranslate nohighlight">\(T\)</span>. Once <span class="math notranslate nohighlight">\(T\)</span> is diagonalized. Let’s diagonalize the matrix <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+T\xrightarrow{diagonalized}
+D=
+\left(
+\begin{array}{cc}
+\lambda_+ &amp;0\\
+0 &amp;\lambda_-
+\end{array}
+\right)\text{.}
+\end{split}\]</div>
+<p>Here,</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{\pm}=e^K\left[\cosh h\pm\sqrt{\sinh ^2 h+e^{-4K}}\right]\text{.}
+\]</div>
+<p>Let’s assume <span class="math notranslate nohighlight">\(\lambda_+&gt;\lambda_-\)</span>.</p>
+<p>We then solve the partition function exactly</p>
+<div class="math notranslate nohighlight">
+\[
+Z(h,K,N(\Omega))=\lambda_+^{N(\Omega)}+\lambda_-^{N(\Omega)}=\lambda_+^{N(\Omega)}\left[1+\left(\frac{\lambda_-}{\lambda_+}\right)^{N(\Omega)}\right]\text{.}
+\]</div>
+<p>When <span class="math notranslate nohighlight">\(N(\Omega)\to\infty\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{N(\Omega)\to\infty} Z(h,K,N(\Omega))\sim \lambda_+^{N(\Omega)}.
+\]</div>
+<p>The free energy density is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(h,K)=\lim_{N(\Omega)\to\infty}\frac{F(h,K,N(\Omega))}{N(\Omega)}=-k_BT\ln \lambda_+\\
+=-J-k_BT\ln\left[\cosh h\pm\sqrt{\sinh ^2 h+e^{-4K}}\right]\text{.}
+\end{split}\]</div>
+<p>At <span class="math notranslate nohighlight">\(T&gt;0\)</span>, we have the argument in the square root to be positive. So no non-analytic behavior for the free energy density. That is consistent with our previous argument that no finite temperature phase transition in the one-dimensional Ising model.
+At <span class="math notranslate nohighlight">\(T=0\)</span>, we can see the <span class="math notranslate nohighlight">\(e^{-4K}\)</span> drops and we have</p>
+<div class="math notranslate nohighlight">
+\[
+f(h,K)=-J-k_BT\ln[\cosh h\pm \vert \sinh h\vert]=-J-\vert H\vert \text{.}
+\]</div>
+<p>As we guessed before, <span class="math notranslate nohighlight">\(f(h,K)\)</span> is continuous in <span class="math notranslate nohighlight">\(H\)</span> but not smooth in <span class="math notranslate nohighlight">\(H\)</span> at <span class="math notranslate nohighlight">\(T=0\)</span>. Therefore, the magnetization density is <span class="math notranslate nohighlight">\(\pm1\)</span> for positive or negative <span class="math notranslate nohighlight">\(H\)</span>. We can also see this behavior will become smooth once we have the <span class="math notranslate nohighlight">\(e^{-4K}\)</span> term.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Ising_models.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ising models and spontaneous symmetry breaking</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="MFT.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Mean-field theory</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yi-Ping Huang (黃一平)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

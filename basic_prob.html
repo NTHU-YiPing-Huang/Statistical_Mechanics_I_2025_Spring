@@ -1,0 +1,818 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic concepts in probability theory &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'basic_prob';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Random walk and emergent properties" href="random_walk_and_emergent_properties.html" />
+    <link rel="prev" title="The applications of statistical mechanics" href="scope.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="syllabus.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="syllabus.html">
+                    Syllabus for Statistical Mechanics (I) – (2025)PHYS521000
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">fundamentals</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction.html">Introduction</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="How_to_ask.html">How to ask a question?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_of_physics.html">The development of physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Basic concepts in probability theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_1.html">Guide to Exercise 1</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="a_simple_example.html">A simple example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rev_thermodyn.html">Review of thermodynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_2.html">Guide to Exercise 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_3.html">Guide to Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="density_matrix.html">Density operator formalism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity (Do we really need it?)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="free_systems.html">Other interacting free systems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_4.html">Guide to Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2nd_quantization.html">Second quantization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_5.html">Guide to Exercise 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="phase_diagram.html">Phases and phase diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models.html">Ising models and spontaneous symmetry breaking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ising_models_2.html">Transfer matrix method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MFT.html">Mean-field theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide_exer_6.html">Guide to Exercise 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="exercise_0.html">Exercise</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="exercise_1.html">Exercise 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_2.html">Exercise 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_3.html">Exercise 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_4.html">Exercise 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_5.html">Exercise 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise_6.html">Exercise 6</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fbasic_prob.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/basic_prob.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Basic concepts in probability theory</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-notions">Simple notions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-probability">What is probability?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-multiple-variables">Probability of multiple variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-probability">Joint probability</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#margin-probability">Margin probability</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability">Conditional probability</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-variables">Independent variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-variance-and-standard-deviation">Mean, variance and standard deviation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-integral">Gaussian integral</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#one-dimensional-gaussian-integral">One-dimensional Gaussian integral.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-gaussian-integral">Multidimensional Gaussian integral</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-s-approximation">Stirling’s approximation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-of-independent-random-numbers">Sets of independent random numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-enter-statistical-mechanics">Before we enter statistical mechanics</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="basic-concepts-in-probability-theory">
+<h1>Basic concepts in probability theory<a class="headerlink" href="#basic-concepts-in-probability-theory" title="Permalink to this headline">#</a></h1>
+<div class="section" id="simple-notions">
+<h2>Simple notions<a class="headerlink" href="#simple-notions" title="Permalink to this headline">#</a></h2>
+<div class="section" id="what-is-probability">
+<h3>What is probability?<a class="headerlink" href="#what-is-probability" title="Permalink to this headline">#</a></h3>
+<p>Suppose we have a set <span class="math notranslate nohighlight">\(\Omega\)</span> and we have several events <span class="math notranslate nohighlight">\(\omega\in\Omega\)</span>. If we randomly pick an event <span class="math notranslate nohighlight">\(\omega\)</span>, we can ask: how frequently we will get an event satisfy certain criteria <span class="math notranslate nohighlight">\(\Lambda\)</span>? The probability to have event <span class="math notranslate nohighlight">\(\lambda\in\Lambda\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{N_t\to\infty}\frac{ N(\lambda\in\Lambda)}{N_t}; N_t\text{ is the number of trials.}
+\]</div>
+</div>
+<div class="section" id="probability-of-multiple-variables">
+<h3>Probability of multiple variables<a class="headerlink" href="#probability-of-multiple-variables" title="Permalink to this headline">#</a></h3>
+<p>In statistical mechanics, usually we need to face probability descriptions of multiple variables. We will use a simple example to demonstrate the following concepts.</p>
+<p>Suppose we have <span class="math notranslate nohighlight">\(\Omega\)</span> formed by integers with color red, green and blue.</p>
+<div class="math notranslate nohighlight">
+\[
+\Omega: \left\{Red: 1,34,7; Green: 12,5; Blue: 276, 19,18, 2331\right\}
+\]</div>
+<p>In addition to the color, we can also categorize the integers by its parity, <em>i.e.</em> evenness or oddness.</p>
+<p>We can use these two conditions, color and parity of the integers, to illustrate the following concepts.</p>
+<div class="figure align-default" id="set-relation">
+<a class="reference internal image-reference" href="_images/probability.png"><img alt="_images/probability.png" src="_images/probability.png" style="width: 350px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The set <span class="math notranslate nohighlight">\(\Omega\)</span>: The circled region, <span class="math notranslate nohighlight">\(\alpha+\beta\)</span>, represent the red integers. The triangular region, <span class="math notranslate nohighlight">\(\beta+\gamma\)</span>, represent the odd integers. The set <span class="math notranslate nohighlight">\(\Omega\)</span> is <span class="math notranslate nohighlight">\(\alpha+\beta+\gamma+\delta\)</span>.</span><a class="headerlink" href="#set-relation" title="Permalink to this image">#</a></p>
+</div>
+<div class="section" id="joint-probability">
+<h4>Joint probability<a class="headerlink" href="#joint-probability" title="Permalink to this headline">#</a></h4>
+<p>The joint probability ask what is the probability of two conditions to be true at the same time.
+For example, we can ask what is the probability that we have red odd integers? <span class="math notranslate nohighlight">\(P(red,odd)=\frac{\beta}{\alpha+\beta+\gamma+\delta}=\frac{2}{9}\)</span>.</p>
+<p>We have <span class="math notranslate nohighlight">\(P(a,b)=P(b,a)\)</span> in general.</p>
+<p>The normalization condition for the joint probability is</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{a\in A}\sum_{b\in B}P(a,b)=1\xrightarrow{i.e.}\sum_{color}\sum_{parity}P(color,parity)=1\text{.}
+\]</div>
+</div>
+<div class="section" id="margin-probability">
+<h4>Margin probability<a class="headerlink" href="#margin-probability" title="Permalink to this headline">#</a></h4>
+<p>The margin probability means we sum over all the possibilities of one condition. For example, we can ask what is the probability to have red integer in this case. We can derive that from the joint probability and sum over the even and odd cases with color red.</p>
+<div class="math notranslate nohighlight">
+\[
+P_A(a)=\sum_{b\in B}P(a,b)\xrightarrow{i.e.} P_{color}(Red)=\sum_{parity}P(Red,parity)=\frac{\alpha+\beta}{\alpha+\beta+\gamma+\delta}=\frac{3}{9}\text{.}
+\]</div>
+</div>
+<div class="section" id="conditional-probability">
+<h4>Conditional probability<a class="headerlink" href="#conditional-probability" title="Permalink to this headline">#</a></h4>
+<p>Conditional probability of <span class="math notranslate nohighlight">\(b\)</span> given <span class="math notranslate nohighlight">\(a\)</span> is denoted as <span class="math notranslate nohighlight">\(P(b|a)\)</span>. For example, we can ask what is the conditional probability of we pick a red integer given the integers are odd.</p>
+<div class="math notranslate nohighlight">
+\[
+P(red|odd)=\frac{\beta}{\beta+\gamma}=\frac{2}{5}\text{.}
+\]</div>
+<p><span class="math notranslate nohighlight">\(P(a|b)\neq P(b|a)\)</span> in general. For example</p>
+<div class="math notranslate nohighlight">
+\[
+P(odd|red)=\frac{\beta}{\alpha+\beta}=\frac{2}{3}\text{.}
+\]</div>
+<p><em>Bayes’ theorem</em></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(a,b)=P(b,a)=P(b|a)P_A(a)=P(a|b)P_B(b)\\
+\xrightarrow{i.e.} P(red,odd)=P(red|odd)P_{parity}(odd)=P(odd|red)P_{color}(red)\\
+=\frac{\beta}{\beta+\gamma}\frac{\beta+\gamma}{\alpha+\beta+\gamma+\delta}=\frac{\beta}{\alpha+\beta}\frac{\alpha+\beta}{\alpha+\beta+\gamma+\delta}\text{.}
+\end{split}\]</div>
+<p><em>Extended form of Bayes’ theorem</em> when <span class="math notranslate nohighlight">\(\Omega\)</span> is divided into sub-regions <span class="math notranslate nohighlight">\(\Omega_i\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+P_B(b)=\sum_i P(b|\Omega_i)P(\Omega_i)\text{.}
+\]</div>
+<p>We can pick <span class="math notranslate nohighlight">\(\Omega_1=A\)</span> and <span class="math notranslate nohighlight">\(\Omega_2=\overline{A}\)</span>. Then we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(a|b)=\frac{P(b|a)P_A(a)}{P_B(b)}=\frac{P(b|a)P_A(a)}{P(b|a)P_A(a)+P(b|\overline{a})P_{\overline{A}}(\overline{a})}\\
+\xrightarrow{i.e.}
+P(red|odd)=\frac{P(odd|red)P_{color}(red)}{P(odd|red)P_{color}(red)+P(odd|\text{not red})P_{color}(\text{not red})}
+\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="independent-variables">
+<h3>Independent variables<a class="headerlink" href="#independent-variables" title="Permalink to this headline">#</a></h3>
+<p>If <span class="math notranslate nohighlight">\(P(a,b)=P_A(a)P_B(b)\)</span>, we said <span class="math notranslate nohighlight">\(a,b\)</span> are independent variables.</p>
+<p>This is because the conditional probability is <span class="math notranslate nohighlight">\(P(a|b)=\frac{P(a,b)}{P_B(b)}\xrightarrow{independent}\frac{P_A(a)P_B(b)}{P_B(b)}=P_A(a)\)</span> is independent of <span class="math notranslate nohighlight">\(b\)</span>!</p>
+</div>
+<div class="section" id="mean-variance-and-standard-deviation">
+<h3>Mean, variance and standard deviation<a class="headerlink" href="#mean-variance-and-standard-deviation" title="Permalink to this headline">#</a></h3>
+<p>For a random variable <span class="math notranslate nohighlight">\(a\)</span> and the function <span class="math notranslate nohighlight">\(F\)</span> will map it to another random variable <span class="math notranslate nohighlight">\(F(a)\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Mean: <span class="math notranslate nohighlight">\(\langle F\rangle \equiv \sum_a F(a) P_A(a)\)</span>.</p></li>
+<li><p>n-th moment:<span class="math notranslate nohighlight">\(\langle F^n\rangle \equiv \sum_a [F(a)]^n P_A(a)\)</span>.</p></li>
+<li><p>variance <span class="math notranslate nohighlight">\(\sigma^2=\langle (F-\langle F\rangle)^2\rangle=\sum_a \left(F(a)-\langle F\rangle\right)^2P_A(a)=\langle F^2\rangle-\langle F\rangle^2\)</span></p></li>
+<li><p>correlation function between <span class="math notranslate nohighlight">\(F,G\)</span> is <span class="math notranslate nohighlight">\(f_{FG}=\langle FG\rangle-\langle F\rangle \langle G\rangle\)</span>.
+That is,
+<span class="math notranslate nohighlight">\( f_{FG}\equiv \sum_a\sum_b F(a)G(b)P(a,b)-\left(\sum_a F(a)P_A(a)\right)\left(\sum_bG(b)P_B(b)\right)\)</span></p></li>
+</ol>
+</div>
+<div class="section" id="gaussian-integral">
+<h3>Gaussian integral<a class="headerlink" href="#gaussian-integral" title="Permalink to this headline">#</a></h3>
+<div class="section" id="one-dimensional-gaussian-integral">
+<h4>One-dimensional Gaussian integral.<a class="headerlink" href="#one-dimensional-gaussian-integral" title="Permalink to this headline">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+G_1=\int_{-\infty}^{\infty}e^{-ax^2}dx\text{.}
+\]</div>
+<p>The trick is to square this expression, we found</p>
+<div class="math notranslate nohighlight">
+\[
+(G_1)^2=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}e^{-ax^2}e^{-ay^2}dxdy\text{.}
+\]</div>
+<p>This integral is over a two-dimensional space; we can change the variables into polar coordinates <span class="math notranslate nohighlight">\((r,\theta)\)</span>. The angular integral and the radial integral will become trivial.</p>
+<div class="math notranslate nohighlight">
+\[
+(G_1)^2=\int_{0}^{2\pi}\int_0^{\infty} e^{-ar^2}rdrd\theta=\frac{2\pi}{2}\int_0^\infty e^{-ar^2}2rdr=\frac{\pi}{a}\text{.}
+\]</div>
+<p>Once this expression is known, we can simply generalize it into the case with a linear term</p>
+<div class="math notranslate nohighlight">
+\[
+G_1'=\int_{-\infty}^{\infty}e^{-ax^2+bx}dx\text{.}
+\]</div>
+<p>The result will be left as an exercise.</p>
+</div>
+<div class="section" id="multidimensional-gaussian-integral">
+<h4>Multidimensional Gaussian integral<a class="headerlink" href="#multidimensional-gaussian-integral" title="Permalink to this headline">#</a></h4>
+<p>The multidimensional Gaussian integral is</p>
+<div class="math notranslate nohighlight">
+\[
+G_N=\int_{-\infty}^{\infty}dx_1\int_{-\infty}^{\infty}dx_2...\int_{-\infty}^{\infty}dx_N \exp\left[-\frac{1}{2} x_iA_{ij}x_j+b_ix_i\right]=\sqrt{\frac{(2\pi)^n}{\text{det} A}} \left[-\frac{b_i(A)^{-1}_{ij}b_j}{2}\right]\text{.}
+\]</div>
+<p>This expression can be derived by diagonalizing <span class="math notranslate nohighlight">\(A\)</span> and using the new basis to perform the independent one-dimensional integrals.</p>
+</div>
+</div>
+<div class="section" id="stirling-s-approximation">
+<h3>Stirling’s approximation<a class="headerlink" href="#stirling-s-approximation" title="Permalink to this headline">#</a></h3>
+<p>By definition</p>
+<div class="math notranslate nohighlight">
+\[
+N!=\int_0^{\infty}e^{-x}x^Ndx=\int_0^{\infty} e^{-x}e^{N\ln x} dx=\int_0^{\infty}e^{f(x)}dx\text{.}
+\]</div>
+<p>This expression is exact. However, we want to have a good approximation of the <span class="math notranslate nohighlight">\(N!\)</span> which means we want to approximate the integral at the right-hand side when <span class="math notranslate nohighlight">\(N\)</span> is large.</p>
+<p>We are going to introduce the idea of the steepest descent method (a.k.a. saddle point approximation) to derive Stirling’s approximation. We will do it first and then explain why this method makes sense. Let’s find the point <span class="math notranslate nohighlight">\(x^{*}\)</span> such that <span class="math notranslate nohighlight">\(f'(x^*)=0\)</span> and expand <span class="math notranslate nohighlight">\(f(x)\)</span> around <span class="math notranslate nohighlight">\(x^{*}\)</span>.</p>
+<p>We have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x)&amp;= N\ln x-x=f(x^*)+f'(x^*)(x-x^*)+\frac{f''(x^*)}{2}(x-x^*)^2+...\\
+f'(x)&amp;=\frac{N}{x}-1\rightarrow x^{*}=N\\
+f''(x)&amp;=-\frac{N}{x^2}\rightarrow f''(x^{*})=-\frac{1}{N}\text{.}
+\end{split}\]</div>
+<p>Next, we can ask: does it make sense to expand around <span class="math notranslate nohighlight">\(x^*=N\)</span>? To answer that we would like to know how the error looks like? The leading order error is proportional with <span class="math notranslate nohighlight">\(f''(x^*)=-N^{-1}\)</span>. That means, when <span class="math notranslate nohighlight">\(N\)</span> is large, this error gets suppressed! The method of steepest descent is very general. However, one should analyze the error carefully. In this case, the form of <span class="math notranslate nohighlight">\(f(x)\)</span> works in our favor to suppress the leading order error! So we can approximate <span class="math notranslate nohighlight">\(N!\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+N!\approx \int_0^{\infty}e^{f(N)-\frac{(x-N)^2}{2N}} dx=e^{N\ln N-N} \sqrt{2\pi N}\text{.}
+\]</div>
+<p>This is Stirling’s approximation</p>
+<div class="math notranslate nohighlight">
+\[
+\ln N!=N\ln N-N+\frac{1}{2}\ln(2\pi N)\text{.}
+\]</div>
+<p>One can insert <span class="math notranslate nohighlight">\(N=10^{23}\)</span> and see how important is each term. One can easily see the first two terms plays the dominant role in this expression.</p>
+<div class="tip admonition">
+<p class="admonition-title">What?</p>
+<p>The method of steepest descent is a very powerful method to approximate integrals. Most of the time, we cannot evaluate integral exactly. Therefore, how to approximate the integral analytically is an important technique for analytic progress. We will refer our reader to <span id="id1">[<a class="reference internal" href="markdown.html#id6" title="Carl M Bender and Steven A Orszag. Advanced mathematical methods for scientists and engineers I: Asymptotic methods and perturbation theory. Volume 1. Springer Science &amp; Business Media, 1999.">BO99</a>]</span> for detailed discussions.</p>
+</div>
+</div>
+</div>
+<div class="section" id="sets-of-independent-random-numbers">
+<h2>Sets of independent random numbers<a class="headerlink" href="#sets-of-independent-random-numbers" title="Permalink to this headline">#</a></h2>
+<p>Suppose we have a vector <span class="math notranslate nohighlight">\(\{F_1,F_2,...,F_N\}\)</span> where <span class="math notranslate nohighlight">\(F_j\)</span> are independent random variables. In general, <span class="math notranslate nohighlight">\(F_j\)</span> is chosen from the probability distribution function <span class="math notranslate nohighlight">\(P_j(F_j)\)</span>. (Mathematically, we allow <span class="math notranslate nohighlight">\(P_j(F_j)\)</span> to be arbitrary distribution functions. However, in physical settings, usually <span class="math notranslate nohighlight">\(P_j(F_j)\)</span> is a fixed function.) This is almost equivalent to our random walk problem. Let’s try to evaluate the sum of this vector.</p>
+<div class="math notranslate nohighlight">
+\[
+S_N=\sum_{j=1}^N F_j
+\]</div>
+<p>The mean of <span class="math notranslate nohighlight">\(S_N\)</span> can be expressed easily</p>
+<div class="math notranslate nohighlight">
+\[
+\langle S_N\rangle=\sum_{j=1}^N \langle F_j\rangle \text{ (Here, we use the property that the mean is a linear operator).}
+\]</div>
+<p>The variance of <span class="math notranslate nohighlight">\(S_N\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sigma_{S_N}=\langle S_N^2\rangle-\langle S_N\rangle^2=\sum_{j=1,k=1}^{N}\langle F_jF_k\rangle-\left(\sum_{j=1}^N F_j\right)\left(\sum_{k=1}^N F_k\right)\\
+=\sum_{j=1}^{N}\sum_{k\neq j}^{N}\langle F_jF_k\rangle+\sum_{j=1}^{N}\sum_{k=j}^{N}\langle F_jF_k\rangle-\left(\sum_{j=1}^N F_j\right)\left(\sum_{k=1}^N F_k\right)\\
+=\sum_{j=1}^{N}\sum_{k\neq j}^{N}\langle F_j\rangle\langle F_k\rangle+\sum_{j=1}^{N}\langle F_j^2\rangle-\left(\sum_{j=1}^N F_j\right)\left(\sum_{k=1}^N F_k\right)\\
+=\sum_{j=1}^{N}\left[\langle F_j^2\rangle-\langle F_j\rangle^2\right]=\sum_{j=1}^{N}\sigma_j^2\text{.}
+\end{split}\]</div>
+<p>In the third line of the equation, we use the condition that <span class="math notranslate nohighlight">\(F_j\)</span> are independent variables. That is, <span class="math notranslate nohighlight">\(\langle F_jF_k\rangle=\langle F_j\rangle\langle F_k\rangle\)</span>.</p>
+<p>The above expression is for a general distribution function <span class="math notranslate nohighlight">\(P_j(F_j)\)</span>. If we are analyzing a specific physical system where <span class="math notranslate nohighlight">\(P_j(F_j)=P(F)\)</span>, we can further simplify our result to have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle S_N\rangle= N \langle F\rangle\\
+\sigma_{S_N}=N \left[\langle F^2\rangle -\langle F\rangle^2 \right]=N\sigma^2\text{.}
+\end{split}\]</div>
+<p>The <em>relative standard deviation</em> is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\sigma_{S_N}}{\langle S_N\rangle}=\frac{1}{\sqrt{N}}\frac{\sigma}{\langle F\rangle}\text{.}
+\]</div>
+<p><strong>This is the most crucial result of probability theory for statistical mechanics. What does it tell us?</strong></p>
+<ul class="simple">
+<li><p>When <span class="math notranslate nohighlight">\(N\)</span> is large (say <span class="math notranslate nohighlight">\(N\approx 10^{23}\)</span>), the fluctuation (estimated by <span class="math notranslate nohighlight">\(\sigma_{S_N}\)</span>) is barely noticeable compared with its mean value <span class="math notranslate nohighlight">\(\langle F\rangle\)</span> since this ratio goes as <span class="math notranslate nohighlight">\(N^{-1/2}\)</span>.</p></li>
+<li><p>The result is quite general; we only require the mean and the variance to be well defined. Not specific detail is required for <span class="math notranslate nohighlight">\(P(F)\)</span>.</p></li>
+<li><p>We can see that the problem actually gets simpler when <span class="math notranslate nohighlight">\(N\to\infty\)</span>!</p></li>
+</ul>
+</div>
+<div class="section" id="before-we-enter-statistical-mechanics">
+<h2>Before we enter statistical mechanics<a class="headerlink" href="#before-we-enter-statistical-mechanics" title="Permalink to this headline">#</a></h2>
+<p>Why do we spend lectures talking about statistics?</p>
+<ul class="simple">
+<li><p>The trivial reason: We need to those ideas for the future lectures.</p></li>
+<li><p>The non-trivial reasons: it is related to two fundamental ideas of statistical mechanics.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(N\approx 10^{23}\)</span> could lead to regular behavior! The reason is simple; the relative deviations could be suppressed by large <span class="math notranslate nohighlight">\(N\)</span>. Initially, it looks like large <span class="math notranslate nohighlight">\(N\)</span> gives us a formidable obstacle to understanding our system. However, now we realize that it could work in our favor to suppress the fluctuation.</p></li>
+<li><p>The logical jump from microscopic detail description to statistical description: When <span class="math notranslate nohighlight">\(N\)</span> is large, the precise knowledge of microscopic components (<em>e.g.</em>, molecules) is inessential to understand the system as a whole. We jump from the deterministic laws of physics from the microscopic physics to a pure probability description. This postulate is bold and is not obviously true. However, instead of proving this postulate, we will see the benefits of making this postulate in the following lectures.</p></li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="scope.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The applications of statistical mechanics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="random_walk_and_emergent_properties.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Random walk and emergent properties</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-notions">Simple notions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-probability">What is probability?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-multiple-variables">Probability of multiple variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-probability">Joint probability</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#margin-probability">Margin probability</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability">Conditional probability</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-variables">Independent variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-variance-and-standard-deviation">Mean, variance and standard deviation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-integral">Gaussian integral</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#one-dimensional-gaussian-integral">One-dimensional Gaussian integral.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-gaussian-integral">Multidimensional Gaussian integral</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-s-approximation">Stirling’s approximation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-of-independent-random-numbers">Sets of independent random numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-enter-statistical-mechanics">Before we enter statistical mechanics</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yi-Ping Huang (黃一平)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
