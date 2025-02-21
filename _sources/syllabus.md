@@ -10,6 +10,10 @@ The quotes above are very elegant descriptions about the attitude of learning. I
 
 ## Basic information
 * Time: Thursday 13:20-16:20
+	* 13:20-14:10 (lecture, 50min)
+	* 14:10-14:20 (break)
+	* 14:20-15:30 (lecture, 70min)
+	* 15:30-16:00 (Quiz/review the lecture with TAs, 30min. The roll call is not part of the final scores, just used for me to check if this helps the learning.)
 * Classroom: Physics building, Room 124 
 * Instructor: Yi-Ping Huang
 * Office hours: After the course or by appointment (Online or at Room 517)
