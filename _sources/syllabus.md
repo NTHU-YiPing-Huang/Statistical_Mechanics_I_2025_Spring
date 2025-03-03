@@ -16,7 +16,7 @@ The quotes above are very elegant descriptions about the attitude of learning. I
 	* 15:30-16:00 (Quiz/review the lecture with TAs, 30min. The roll call is not part of the final scores, just used for me to check if this helps the learning.)
 * Classroom: Physics building, Room 124 
 * Instructor: Yi-Ping Huang
-* Office hours: After the course or by appointment (Online or at Room 517)
+* Office hours: 11:00 am on Thursday or by appointment (Online or at Room 517)
 * Teaching assistant: **<+TBA+>**, **<+TBA+>**, and **<+TBA+>**
 * TA Office hours: <+TBA+>
 * **Midterm exam date: <+TBA+>**
