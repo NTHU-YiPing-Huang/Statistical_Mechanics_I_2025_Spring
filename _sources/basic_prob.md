@@ -202,9 +202,9 @@ $$
 The variance of $S_N$ is
 
 $$
-\sigma_{S_N}=\langle S_N^2\rangle-\langle S_N\rangle^2=\sum_{j=1,k=1}^{N}\langle F_jF_k\rangle-\left(\sum_{j=1}^N F_j\right)\left(\sum_{k=1}^N F_k\right)\\
-=\sum_{j=1}^{N}\sum_{k\neq j}^{N}\langle F_jF_k\rangle+\sum_{j=1}^{N}\sum_{k=j}^{N}\langle F_jF_k\rangle-\left(\sum_{j=1}^N F_j\right)\left(\sum_{k=1}^N F_k\right)\\
-=\sum_{j=1}^{N}\sum_{k\neq j}^{N}\langle F_j\rangle\langle F_k\rangle+\sum_{j=1}^{N}\langle F_j^2\rangle-\left(\sum_{j=1}^N F_j\right)\left(\sum_{k=1}^N F_k\right)\\
+\sigma_{S_N}=\langle S_N^2\rangle-\langle S_N\rangle^2=\sum_{j=1,k=1}^{N}\langle F_jF_k\rangle-\left(\sum_{j=1}^N \langle F_j\rangle \right)\left(\sum_{k=1}^N \langle F_k\rangle\right)\\
+=\sum_{j=1}^{N}\sum_{k\neq j}^{N}\langle F_jF_k\rangle+\sum_{j=1}^{N}\sum_{k=j}^{N}\langle F_jF_k\rangle-\left(\sum_{j=1}^N \langle F_j\rangle\right)\left(\sum_{k=1}^N \langle F_k\rangle\right)\\
+=\sum_{j=1}^{N}\sum_{k\neq j}^{N}\langle F_j\rangle\langle F_k\rangle+\sum_{j=1}^{N}\langle F_j^2\rangle-\left(\sum_{j=1}^N \langle F_j\rangle\right)\left(\sum_{k=1}^N \langle F_k\rangle\right)\\
 =\sum_{j=1}^{N}\left[\langle F_j^2\rangle-\langle F_j\rangle^2\right]=\sum_{j=1}^{N}\sigma_j^2\text{.}
 $$
 
