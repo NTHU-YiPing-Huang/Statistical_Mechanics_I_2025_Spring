@@ -17,10 +17,13 @@ The quotes above are very elegant descriptions about the attitude of learning. I
 * Classroom: Physics building, Room 124 
 * Instructor: Yi-Ping Huang
 * Office hours: 11:00 am on Thursday or by appointment (Online or at Room 517)
-* Teaching assistant: **<+TBA+>**, **<+TBA+>**, and **<+TBA+>**
-* TA Office hours: <+TBA+>
-* **Midterm exam date: <+TBA+>**
-* **Final exam date: <+TBA+>**
+* Teaching assistant: **Hao-Yang Yen**, **Ren-Hao Lee**, and **Ping-Cheng Lu**
+* TA Office hours: 
+  Monday, 18:00~19:00 Room 620
+  Tuesday, 13:00~14:00 Room 706
+  Friday, 14:00~15:00 Room 706
+* **Midterm exam date: April 10th**
+* **Final exam date: June 5th**
 * The course will be offered in English.
 	* We encourage everyone to interact in English. If some conceptual questions are difficult to be described in English, one can ask the question in Mandarin, and I will translate that into English. If I forgot to do that, please remind me to do so.
 * Teaching method: Lectures with live video streaming. 
