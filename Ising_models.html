@@ -1,45 +1,36 @@
 
-
 <!DOCTYPE html>
 
-
-<html >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ising models and spontaneous symmetry breaking &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    <title>Ising models and spontaneous symmetry breaking &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -47,13 +38,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script src="_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -63,93 +54,61 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Ising_models';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Transfer matrix method" href="Ising_models_2.html" />
     <link rel="prev" title="Phases and phase diagram" href="phase_diagram.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="syllabus.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistical Mechanics (I) -- PHYS521000 統計力學(一）</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -158,306 +117,673 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentals</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentals
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="How_to_ask.html">How to ask a question?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development_of_physics.html">The development of physics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_prob.html">Basic concepts in probability theory</a></li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="introduction.html">
+   Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="How_to_ask.html">
+     How to ask a question?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="development_of_physics.html">
+     The development of physics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="thermodynamics.html">
+     Thermodynamics as an effective theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="motivation.html">
+     Motivation: Why learn statistical mechanics?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="scope.html">
+     The applications of statistical mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basic_prob.html">
+     Basic concepts in probability theory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="random_walk_and_emergent_properties.html">
+   Random walk and emergent properties
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1DRW.html">
+     One dimensional random walk
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="drunkards_walk.html">
+     Drunkard’s walk
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="diffusion_eq.html">
+     The diffusion equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_1.html">
+     Guide to Exercise 1
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_1.html">Guide to Exercise 1</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistical Mechanics
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="a_simple_example.html">A simple example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rev_thermodyn.html">Review of thermodynamics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_2.html">Guide to Exercise 2</a></li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Rev_thermodynamics.html">
+   Thermodynamics and statistical mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="a_simple_example.html">
+     A simple example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rev_thermodyn.html">
+     Review of thermodynamics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_2.html">
+     Guide to Exercise 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Postulates_SM.html">
+   Postulates of statistical mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="phase_space_observables.html">
+     Phase space and Observables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="entropy_exp.html">
+     The fundamental postulate
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Liouville_theorem.html">
+     Liouville’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mc_ensemble.html">
+     Microcanonical ensemble
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="c_ensemble.html">
+     Canonical ensemble
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_3.html">
+     Guide to Exercise 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="g_gc_ensemble.html">
+     Generalized ensemble and grand canonical ensemble
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="density_matrix.html">
+     Density operator formalism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ergodicity.html">
+     Ergodicity (Do we really need it?)
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_3.html">Guide to Exercise 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
-<li class="toctree-l2"><a class="reference internal" href="density_matrix.html">Density operator formalism</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity (Do we really need it?)</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Application of statistical mechanics
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="free_systems.html">Other interacting free systems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_4.html">Guide to Exercise 4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2nd_quantization.html">Second quantization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_5.html">Guide to Exercise 5</a></li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="free_systems.html">
+   Other interacting free systems
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="oscillators.html">
+     Oscillators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_4.html">
+     Guide to Exercise 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fermion_Boson.html">
+     Free Fermions and Bosons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2nd_quantization.html">
+     Second quantization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="phonon_photon.html">
+     Phonon and photon
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_5.html">
+     Guide to Exercise 5
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="phases_transitions.html">
+   Phases and phase transitions
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="phase_diagram.html">
+     Phases and phase diagram
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Ising models and spontaneous symmetry breaking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ising_models_2.html">
+     Transfer matrix method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MFT.html">
+     Mean-field theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="GL.html">
+     Teaser of the Ginsburg-Landau theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_6.html">
+     Guide to Exercise 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="biblio.html">
+   Epilogue
+  </a>
+ </li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="phase_diagram.html">Phases and phase diagram</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ising models and spontaneous symmetry breaking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Ising_models_2.html">Transfer matrix method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MFT.html">Mean-field theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_6.html">Guide to Exercise 6</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="exercise_0.html">Exercise</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="exercise_1.html">Exercise 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_2.html">Exercise 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_3.html">Exercise 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_4.html">Exercise 4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_5.html">Exercise 5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_6.html">Exercise 6</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_0.html">Basic introduction of python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_1.html">Basic numerics and plot</a></li>
-</ul>
-</li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="exercise_0.html">
+   Exercise
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_1.html">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_2.html">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_3.html">
+     Exercise 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_4.html">
+     Exercise 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_5.html">
+     Exercise 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_6.html">
+     Exercise 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="numerical_tools.html">
+   Numerical tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Python_tutorial_0.html">
+     Basic introduction of python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Python_tutorial_1.html">
+     Basic numerics and plot
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
   
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
     </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FIsing_models.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="_sources/Ising_models.md" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.md</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
+    <div class="header-article__right">
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ising models and spontaneous symmetry breaking</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-phase-transition-happened">How can phase transition happened?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-zero-temperature-phase-diagram">The zero temperature phase diagram</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-finite-temperature-phase-diagram">The finite temperature phase diagram</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#one-dimensional-case">One-dimensional case</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-dimensional-case">Two-dimensional case</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetry-and-symmetry-breaking">Symmetry and symmetry breaking</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetry-of-the-system">Symmetry of the system</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments-that-the-spontaneous-symmetry-breaking-is-impossible">Arguments that the spontaneous symmetry breaking is impossible</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density">Justification of spontaneous symmetry breaking (I)–the analytic property of the free energy density</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking">Justification of spontaneous symmetry breaking (II)–the ergodicity breaking</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FIsing_models.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Ising_models.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">
+   The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-can-phase-transition-happened">
+   How can phase transition happened?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-zero-temperature-phase-diagram">
+     The zero temperature phase diagram
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-finite-temperature-phase-diagram">
+     The finite temperature phase diagram
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#one-dimensional-case">
+       One-dimensional case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#two-dimensional-case">
+       Two-dimensional case
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#symmetry-and-symmetry-breaking">
+     Symmetry and symmetry breaking
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#symmetry-of-the-system">
+       Symmetry of the system
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#arguments-that-the-spontaneous-symmetry-breaking-is-impossible">
+       Arguments that the spontaneous symmetry breaking is impossible
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density">
+       Justification of spontaneous symmetry breaking (I)–the analytic property of the free energy density
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking">
+       Justification of spontaneous symmetry breaking (II)–the ergodicity breaking
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Ising models and spontaneous symmetry breaking</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">
+   The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-can-phase-transition-happened">
+   How can phase transition happened?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-zero-temperature-phase-diagram">
+     The zero temperature phase diagram
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-finite-temperature-phase-diagram">
+     The finite temperature phase diagram
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#one-dimensional-case">
+       One-dimensional case
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#two-dimensional-case">
+       Two-dimensional case
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#symmetry-and-symmetry-breaking">
+     Symmetry and symmetry breaking
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#symmetry-of-the-system">
+       Symmetry of the system
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#arguments-that-the-spontaneous-symmetry-breaking-is-impossible">
+       Arguments that the spontaneous symmetry breaking is impossible
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density">
+       Justification of spontaneous symmetry breaking (I)–the analytic property of the free energy density
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking">
+       Justification of spontaneous symmetry breaking (II)–the ergodicity breaking
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <div class="tex2jax_ignore mathjax_ignore section" id="ising-models-and-spontaneous-symmetry-breaking">
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="ising-models-and-spontaneous-symmetry-breaking">
 <h1>Ising models and spontaneous symmetry breaking<a class="headerlink" href="#ising-models-and-spontaneous-symmetry-breaking" title="Permalink to this headline">#</a></h1>
 <p>The notion of spontaneous symmetry breaking is probably the most important non-trivial concept of statistical mechanics (I). It is related to various important phenomena in condensed matter physics, <em>e.g.</em> magnetism, liquid crystal, superconductivity, superfluidity, etc. Also, it plays important rule in the particle physics, <em>e.g.</em> Higgs mechanism, chiral symmetry breaking, etc. Once we grasp the idea of spontaneous symmetry breaking, we can not only understand above-mentioned phenomena but also the important Elitzur’s theorem which states “gauge symmetry” cannot be spontaneously broken.</p>
 <p>The important concepts can be demonstrated by using Ising models, so let’s start from the introduction of the Ising model.
@@ -467,7 +793,7 @@ The formal definition of Ising model is</p>
 H_{Ising,general}=\sum_{i,j} J_{ij} S_iS_j-\sum_i H_iS_i\text{.}
 \]</div>
 <p>Here <span class="math notranslate nohighlight">\(J_{i,j}\)</span> is the exchange coupling between the spins on site <span class="math notranslate nohighlight">\(i\)</span> and site <span class="math notranslate nohighlight">\(j\)</span>. <span class="math notranslate nohighlight">\(H_i\)</span> is the magnetic field coupled with the spin on site <span class="math notranslate nohighlight">\(i\)</span>. Ising model is used to study various different phenomena. Therefore, we made several remarks about the model.</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Classical Ising model and quantum Ising model are different. For classical Ising model the dynamical variable is the binary number 0/1 or spin up or down. In the later discussion, we will use <span class="math notranslate nohighlight">\(S_i=\{+1,-1\}\)</span>. The dynamical variable of the quantum Ising model is described by a state in the q-bit Hilbert space. Since the system has multiple q-bits, the wave function of the quantum Ising model is a many-body wave function in the <span class="math notranslate nohighlight">\(2^N\)</span> dimensional Hilbert space.</p></li>
 <li><p><span class="math notranslate nohighlight">\(J_{ij}&lt;0\)</span> is usually called the ferromagnetic coupling because the classical spins prefer to align with each other. <span class="math notranslate nohighlight">\(J_{ij}&gt;0\)</span> is usually called the anti-ferromagnetic coupling be cause the spins prefer to anti-align with each other in this case. The anti-ferromagnetic coupling could lead to interesting phenomena such as frustration.</p></li>
 <li><p><span class="math notranslate nohighlight">\(J_{ij}\)</span> decays as <span class="math notranslate nohighlight">\(|i-j|\)</span> increases. If it decays exponentially, there is a length scale where the spins are effectively decoupled. In that case we said the interaction is short-ranged or finite-ranged. Sometimes, the coupling decays slower in a power law fashion. We describe those systems as long-ranged coupled systems. Such scenario happens in trapped ion experiments. Sometimes, we will encounter the interaction that does not decay as a function of distance. Usually, they are theoretical idealization for the analytic approach. The thermodynamic limit of such system should be treated carefully.</p></li>
@@ -484,7 +810,7 @@ H_{Ising,general}=\sum_{i,j} J_{ij} S_iS_j-\sum_i H_iS_i\text{.}
 \[
 H=\sum_{\langle i,j\rangle} J S_iS_j-\sum_i H S_i; J&lt;0 \text{.}
 \]</div>
-<div class="section" id="the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">
+<section id="the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">
 <h2>The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)<a class="headerlink" href="#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments" title="Permalink to this headline">#</a></h2>
 <p>We want to use the Ising model to study phases and phase transition. Could we argue that the model should show at least two phases?
 We can derive the partition function as</p>
@@ -506,8 +832,8 @@ Z[{K,h}]=Tr\left[e^{-\beta H(K,h)}\right]=Tr\left[e^{\sum_{\langle i,j\rangle} K
 <p>When the Hamiltonian of the system has a particular symmetry but the statistical behavior of the system breaks that symmetry. We said the symmetry is broken spontaneously.</p>
 </div>
 <p>How is it possible? How the symmetry is broken? We will address this issue several times later. We will take two approaches to understand this phenomena. First approach is from the analytic behavior of the free energy density at the thermodynamic limit. The second approach is from the non-trivial structure of phase space at the thermodynamic limit. Both approach demonstrate the importance of thermodynamic limit. Before discussing these approach. We will circle back to the question on how phase transition happened in the Ising model.</p>
-</div>
-<div class="section" id="how-can-phase-transition-happened">
+</section>
+<section id="how-can-phase-transition-happened">
 <h2>How can phase transition happened?<a class="headerlink" href="#how-can-phase-transition-happened" title="Permalink to this headline">#</a></h2>
 <p>The zeroth order question: can we understand why the system decide to change the pattern of their collective behavior in principle?</p>
 <p>When <span class="math notranslate nohighlight">\(h=0\)</span>, we have</p>
@@ -517,7 +843,7 @@ Z_{\Omega}[K]=\sum_{i=1}^{2^{N(\Omega)}} e^{-\beta \underbrace{H_{\Omega}(K;\{S_
 \]</div>
 <p>Here, <span class="math notranslate nohighlight">\(\{E_i(K)\}\)</span> is the spectrum of the Hamiltonian at coupling constant <span class="math notranslate nohighlight">\(K\)</span>.
 For finite <span class="math notranslate nohighlight">\(N(\Omega)\)</span>, every Boltzmann factor is analytic function in <span class="math notranslate nohighlight">\(K\)</span>. Sum over finite analytic functions will give us an analytic function. Therefore, we expect the partition function and the free energy for finite system to be analytic in <span class="math notranslate nohighlight">\(K\)</span>. The collective behavior at different <span class="math notranslate nohighlight">\(K\)</span> should be qualitatively the same, and there is no phase transition at finite system. From this observation, we should conclude that phase transition can only happen when <span class="math notranslate nohighlight">\(N(\Omega)\to\infty\)</span>. To get non-analytic function from the sum of analytic functions, the summation must be an infinite series. The argument is almost correct. We will use more detailed calculation to show that later. Before doing the more involved calculation, let’s develop a heuristic argument about the phase diagram of the Ising model.</p>
-<div class="section" id="the-zero-temperature-phase-diagram">
+<section id="the-zero-temperature-phase-diagram">
 <h3>The zero temperature phase diagram<a class="headerlink" href="#the-zero-temperature-phase-diagram" title="Permalink to this headline">#</a></h3>
 <p>There is actually another possibility that we can create non-analytic behavior from the partition function of a finite system. The price we paid is to go to the quite special <span class="math notranslate nohighlight">\(T=0\)</span> limit.</p>
 <p>When <span class="math notranslate nohighlight">\(\beta\to\infty\)</span>, we know only the configuration with minimum energy will dominate the partition function.</p>
@@ -526,17 +852,17 @@ For finite <span class="math notranslate nohighlight">\(N(\Omega)\)</span>, ever
 \lim_{\beta\to0}Z_{\Omega}[K]\sim e^{-\beta min(\{E_i(K)\})}
 \]</div>
 <p>The minimization function is not an analytic function in general. When we have two energy levels crossing each other, the dominated pattern of collective behavior swaps! Such phenomena is called level crossing. It is one possible mechanism for the zero temperature phase transition. The important features of this zero temperature phase transition are</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>It does not rely on the thermodynamic limit <span class="math notranslate nohighlight">\(N(\omega)\to\infty\)</span>.</p></li>
 <li><p>It does not care about the dimensionality of the system. The mechanism cares about the energy specturm only.</p></li>
 </ol>
 <p>We can therefore construct our understanding of the zero temperature phase diagram along the coupling constant <span class="math notranslate nohighlight">\(h\)</span>. When <span class="math notranslate nohighlight">\(h&gt;0\)</span>, the system prefers the <span class="math notranslate nohighlight">\(M&gt;0\)</span> configurations. When <span class="math notranslate nohighlight">\(h&lt;0\)</span>, the system prefers the <span class="math notranslate nohighlight">\(M&lt;0\)</span> configurations. When <span class="math notranslate nohighlight">\(h=0\)</span>, the level crossing happens and we have our zero temperature phase transition.</p>
 <p>How the above picture changes when we are at non-zero but low temperature region? We will further discuss the stability of the corresponding <span class="math notranslate nohighlight">\(M&gt;0\)</span> and <span class="math notranslate nohighlight">\(M&lt;0\)</span> configurations. Withou loosing generality, we will focus on the physics with <span class="math notranslate nohighlight">\(M&gt;0\)</span>.</p>
-</div>
-<div class="section" id="the-finite-temperature-phase-diagram">
+</section>
+<section id="the-finite-temperature-phase-diagram">
 <h3>The finite temperature phase diagram<a class="headerlink" href="#the-finite-temperature-phase-diagram" title="Permalink to this headline">#</a></h3>
 <p>Now we know the zero temperature phase diagram. We want to ask the effect of finite temperature. Or, sometimes, we refer to the thermal fluctuation. It turns out the strength of thermal fluctuation is closely related to the dimensionality of the system. Here we will use to simple estimation to demonstrate this fact.</p>
-<div class="section" id="one-dimensional-case">
+<section id="one-dimensional-case">
 <h4>One-dimensional case<a class="headerlink" href="#one-dimensional-case" title="Permalink to this headline">#</a></h4>
 <p>We first notice that the magnetization at the thermodynamic limit is defined as</p>
 <div class="math notranslate nohighlight">
@@ -560,8 +886,8 @@ F_1=(N_b-1) J+(-J)-k_BT \ln(N_b)=N_bJ
 \]</div>
 <p>Here, <span class="math notranslate nohighlight">\(-2J&gt;0\)</span>. That means we can always find a system that is large enough, <em>i.e.</em> <span class="math notranslate nohighlight">\(N_b&gt;e^{\frac{-2J}{k_BT}}\)</span>, such that <span class="math notranslate nohighlight">\(\Delta F&lt;0\)</span>. This means that a system with a domain wall has lower Helmholtz free energy comparing with a system with no domain wall. This argument implies the system prefer to porliferate the domain walls. Thus, the system should be in a disordered phase for any finite temperature at thermodynamic limit.</p>
 <p>Now we can see the entropy estimation is simple because it is a one-dimensional system. We can try to generalize the argument to the two-dimensional system. Let’s see what will be different.</p>
-</div>
-<div class="section" id="two-dimensional-case">
+</section>
+<section id="two-dimensional-case">
 <h4>Two-dimensional case<a class="headerlink" href="#two-dimensional-case" title="Permalink to this headline">#</a></h4>
 <p>Similarly, we start from an ordered phase and ask what is the free energy for the system to have a domain wall with length <span class="math notranslate nohighlight">\(n\)</span>. Now we cannot have a exact result, since the domain wall with length <span class="math notranslate nohighlight">\(n\)</span> could have different shape. Here, we try to formulate an approximation that will over count the effect of entropy. But even for such an overcounting scheme, we can see the energy and the entropy scales in a way that the ordered phase could survive under the thermal fluctuation due to the domain walls.</p>
 <p>The free energy for a system with domain wall with circumferences <span class="math notranslate nohighlight">\(n\)</span> is approximately</p>
@@ -572,10 +898,10 @@ F_1=(N_b-1) J+(-J)-k_BT \ln(N_b)=N_bJ
 <p>Here, we use <span class="math notranslate nohighlight">\(N_n\)</span> to denote the configuration number of closed domain wall. We estimate it using the following simple picture. We can start with any bond and do a random walk from there. Every step, there should be <span class="math notranslate nohighlight">\((z-1)\)</span> choices. Therefore, after <span class="math notranslate nohighlight">\(n\)</span> step, we have <span class="math notranslate nohighlight">\((z-1)^n\)</span> possible paths. In those paths, there are open path which is not a valid domain wall configuration. Therefor, this approximation over estimate the effect of entropy. However, the resul already show the important structure that we can always find a temperature that is low enough such that the free energy to have a domain wall with circumference <span class="math notranslate nohighlight">\(n\)</span> is higher than the fully polarized configuration. The corresponding critical temperature is <span class="math notranslate nohighlight">\(T_c=\frac{-2J}{k_B\ln(z-1)}\)</span>.</p>
 <p>The argument implies the order can survive at finite temperature for two-dimensional system. In fact, finite temperature phase transition is possible for system with discrete symmetry above two-dimension.</p>
 <p>Collecting the information so far, we have</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>The zero temperature phase diagram: Energy minimization gives us the corresponding magetization at <span class="math notranslate nohighlight">\(h\neq0\)</span>.</p></li>
 <li><p>The finite temperature argument suggest:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>One dimensional system: The order at zero temperature will be destroyed by thermal fluctuation. So the order is destroyed once <span class="math notranslate nohighlight">\(T\neq0\)</span>.</p></li>
 <li><p>Two dimensional system: The order survives when we turn on thermal fluctuation. At finite but small tempeerature, one can have a discontinuous phase transition when we go from <span class="math notranslate nohighlight">\(H&lt;0\)</span> to <span class="math notranslate nohighlight">\(H&gt;0\)</span>.</p></li>
 </ol>
@@ -585,15 +911,17 @@ F_1=(N_b-1) J+(-J)-k_BT \ln(N_b)=N_bJ
 </ol>
 <p>From above information, we can argue the schematic phase diagram should look like <a class="reference internal" href="#ising-phase-diagram"><span class="std std-ref">the figure</span></a>.</p>
 <p>We posponed the discussion of <span class="math notranslate nohighlight">\(h=0\)</span> case, so we still cannot say much about what happened there. We will discuss that more carefully in the next section.</p>
-<div class="figure align-default" id="ising-phase-diagram">
+<figure class="align-default" id="ising-phase-diagram">
 <a class="reference internal image-reference" href="_images/Ising_phase_diagram.png"><img alt="_images/Ising_phase_diagram.png" src="_images/Ising_phase_diagram.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Schematic phase diagram of two-dimensional Ising model.</span><a class="headerlink" href="#ising-phase-diagram" title="Permalink to this image">#</a></p>
-</div>
-</div>
-</div>
-<div class="section" id="symmetry-and-symmetry-breaking">
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Schematic phase diagram of two-dimensional Ising model.</span><a class="headerlink" href="#ising-phase-diagram" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="symmetry-and-symmetry-breaking">
 <h3>Symmetry and symmetry breaking<a class="headerlink" href="#symmetry-and-symmetry-breaking" title="Permalink to this headline">#</a></h3>
-<div class="section" id="symmetry-of-the-system">
+<section id="symmetry-of-the-system">
 <h4>Symmetry of the system<a class="headerlink" href="#symmetry-of-the-system" title="Permalink to this headline">#</a></h4>
 <p>Let’s consider the Hamiltonian</p>
 <div class="math notranslate nohighlight">
@@ -606,8 +934,8 @@ F_1=(N_b-1) J+(-J)-k_BT \ln(N_b)=N_bJ
 <p>Maybe you will feel curious, it seems like the operation <span class="math notranslate nohighlight">\(\{S_i\}\to\{-S_i\}\)</span> is just a mathematical operation of the model. Can we relate that to any physical operation? To answer that question, we need to specify what is the microscopic origin of <span class="math notranslate nohighlight">\(S_i\)</span>. We start the discussion by assuming we are trying to model a magnetic system. Therefore, it is very tempting to identify the theoretical variable <span class="math notranslate nohighlight">\(S_i\)</span> with the atomic magnetic moments. In that case, fliping the spin corresponds to flip the orientation of the magnetic moments. We also have the physical picture that the atmoic magnetic moments came from the microscopic current. To flip its direction, it corresponds to reverse the microscopic current flow. That corresponds to the time-reversal operation. (Note that, it is actually possible to use <span class="math notranslate nohighlight">\(S_i\)</span> to model <em>electronic</em> dipole moments. In that case, the time-reversal operation will not flip the orientation of the <span class="math notranslate nohighlight">\(S_i\)</span>. To describe the physical operation, it is important to have a well-defined meaning for <span class="math notranslate nohighlight">\(S_i\)</span>.)</p>
 <p>In the lab, we cannot really perform the time reversal operation for the microscopic system. However, we can perform the time reversal operation for macroscopic current that induce the external field, <span class="math notranslate nohighlight">\(h\)</span>.</p>
 <p>We can notice there is a operation(a thought experiment) that keep the Hamiltonian invariant, <em>i.e.</em> we can globally perform the time reversal symmetry such that we flip the orientation of the microscopic and the macroscopic current. That leads to <span class="math notranslate nohighlight">\(\{S_i\}\to\{-S_i\},h\to-h\)</span>.</p>
-</div>
-<div class="section" id="arguments-that-the-spontaneous-symmetry-breaking-is-impossible">
+</section>
+<section id="arguments-that-the-spontaneous-symmetry-breaking-is-impossible">
 <h4>Arguments that the spontaneous symmetry breaking is impossible<a class="headerlink" href="#arguments-that-the-spontaneous-symmetry-breaking-is-impossible" title="Permalink to this headline">#</a></h4>
 <p>We have already point out the symmetry at <span class="math notranslate nohighlight">\(h=0\)</span> will be spontaneously broken. Let’s try to see if it is possible for a finite system using the following two arguments.</p>
 <p><strong>Argument 1</strong></p>
@@ -636,8 +964,8 @@ M_{\Omega}(h) N(\Omega)=\sum_{ \{S_i\} } \left[\left.\left(\sum_j S_j\right)\rig
 \]</div>
 <p>In the last equality, we use the property that the total summation over spin is odd under the Ising symmetry, but the weight is invariant under Ising symmetry. So every possitive contribution is canceled exactly by its Ising partner in the summation.</p>
 <p>Now the idea of spontaneous symmetry looks more and more suspecious. Can symmetry really be broken spontaneously? If yes, what is wrong with the previous arguments?</p>
-</div>
-<div class="section" id="justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density">
+</section>
+<section id="justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density">
 <h4>Justification of spontaneous symmetry breaking (I)–the analytic property of the free energy density<a class="headerlink" href="#justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density" title="Permalink to this headline">#</a></h4>
 <p>The problem of the argument 1 is at the “<span class="math notranslate nohighlight">\(\stackrel{?}{=}\)</span>” when we calculate the magnetization. The implicity assumption that is used to get this equality is we assume the free energy is a <strong>smooth</strong> function of <span class="math notranslate nohighlight">\(h\)</span>, which is stronger than requireing the free energy is a <strong>continuous</strong> function of <span class="math notranslate nohighlight">\(h\)</span>. In fact, as we mentioned previously, when we have an infinite series, even though every term is analytic, the series could be non-analytic. Therefore, the additional requirement that the free energy is smooth in <span class="math notranslate nohighlight">\(h\)</span> only holds when the system is finite, not in the thermodynamic limit.</p>
 <p>In the mathematical expression, it means the two limit, <span class="math notranslate nohighlight">\(h\to0\)</span> and <span class="math notranslate nohighlight">\(N(\Omega)\to\infty\)</span> does not commute. This is a rare example that the ordering of the limit actually matters.</p>
@@ -656,8 +984,8 @@ M_s=\lim_{h\to0^+}-\frac{\partial f(h)}{\partial h}=\lim_{h\to0^+}\lim_{N(\Omega
 \[
 M(h=0)=\lim_{N(\Omega)\to\infty}\lim_{h\to0}-\frac{\partial }{\partial h} \frac{F(h)}{N(\Omega)}=0\text{.}
 \]</div>
-</div>
-<div class="section" id="justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking">
+</section>
+<section id="justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking">
 <h4>Justification of spontaneous symmetry breaking (II)–the ergodicity breaking<a class="headerlink" href="#justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking" title="Permalink to this headline">#</a></h4>
 <p>The problem of the argument 2 is about the ergodicity. We assume the system is ergodic and the system can explore any two symmetry related configurations. Let’s see how this picture breaks down at the thermodynamic limit.</p>
 <p>Suppose we have a finite field <span class="math notranslate nohighlight">\(h\)</span> that breaks the Ising symmetry. Let’s consider a specific spin configuration. The magnetic field induced energy of configuration is <span class="math notranslate nohighlight">\(N(\Omega)\epsilon(h)\)</span>. The Ising partner of this configuration will have the magnetic field induced energy <span class="math notranslate nohighlight">\(-N(\Omega)\epsilon(h)\)</span>. Without loosing generality, we call the configuration with <span class="math notranslate nohighlight">\(\epsilon(h)&gt;0\)</span> the configuration <span class="math notranslate nohighlight">\(A\)</span> and its Ising partner <span class="math notranslate nohighlight">\(\overline{A}\)</span>.</p>
@@ -676,10 +1004,10 @@ M_{s}(h)=\lim_{N(\Omega)\to\infty}\frac{1}{N(\Omega)}\sum_{ \{S_i\}\in \overline
 <p class="admonition-title">What?</p>
 <p>The argument just describe the possibility of spontaneous symmetry breaking. Whether the symmetry breaking phase could survive at finite temperature is another question. For example, the argument has no dimensionality information. So it will suggest spontaneous symmetry could happen at one-dimensional system. However, the previous argument suggest the order is not stable against thermal fluctuation. Therefore, we still cannot observe spontaneous symmetry breaking at finite temperature in one-dimensional Ising model.</p>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -693,7 +1021,7 @@ M_{s}(h)=\lim_{N(\Omega)\to\infty}\frac{1}{N(\Omega)}\sum_{ \{S_i\}\in \overline
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -701,121 +1029,50 @@ M_{s}(h)=\lim_{N(\Omega)\to\infty}\frac{1}{N(\Omega)}\sum_{ \{S_i\}\in \overline
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="phase_diagram.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Phases and phase diagram</p>
-      </div>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="phase_diagram.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Phases and phase diagram</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="Ising_models_2.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="Ising_models_2.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Transfer matrix method</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
-</div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-phase-diagram-of-ferromagnetic-ising-model-on-hypercubic-lattice-heuristic-arguments">The phase diagram of ferromagnetic Ising model on hypercubic lattice (heuristic arguments)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-phase-transition-happened">How can phase transition happened?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-zero-temperature-phase-diagram">The zero temperature phase diagram</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-finite-temperature-phase-diagram">The finite temperature phase diagram</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#one-dimensional-case">One-dimensional case</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-dimensional-case">Two-dimensional case</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetry-and-symmetry-breaking">Symmetry and symmetry breaking</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetry-of-the-system">Symmetry of the system</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments-that-the-spontaneous-symmetry-breaking-is-impossible">Arguments that the spontaneous symmetry breaking is impossible</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#justification-of-spontaneous-symmetry-breaking-i-the-analytic-property-of-the-free-energy-density">Justification of spontaneous symmetry breaking (I)–the analytic property of the free energy density</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#justification-of-spontaneous-symmetry-breaking-ii-the-ergodicity-breaking">Justification of spontaneous symmetry breaking (II)–the ergodicity breaking</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Yi-Ping Huang (黃一平)
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2022.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
     </div>
-  </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Yi-Ping Huang (黃一平)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>

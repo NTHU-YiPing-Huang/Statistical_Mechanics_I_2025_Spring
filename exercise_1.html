@@ -1,45 +1,36 @@
 
-
 <!DOCTYPE html>
 
-
-<html >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 1 &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    <title>Exercise 1 &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -47,13 +38,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script src="_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -63,93 +54,61 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercise_1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Exercise 2" href="exercise_2.html" />
     <link rel="prev" title="Exercise" href="exercise_0.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="syllabus.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistical Mechanics (I) -- PHYS521000 統計力學(一）</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -158,284 +117,528 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentals</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentals
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="How_to_ask.html">How to ask a question?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development_of_physics.html">The development of physics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_prob.html">Basic concepts in probability theory</a></li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="introduction.html">
+   Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="How_to_ask.html">
+     How to ask a question?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="development_of_physics.html">
+     The development of physics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="thermodynamics.html">
+     Thermodynamics as an effective theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="motivation.html">
+     Motivation: Why learn statistical mechanics?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="scope.html">
+     The applications of statistical mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basic_prob.html">
+     Basic concepts in probability theory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="random_walk_and_emergent_properties.html">
+   Random walk and emergent properties
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1DRW.html">
+     One dimensional random walk
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="drunkards_walk.html">
+     Drunkard’s walk
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="diffusion_eq.html">
+     The diffusion equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_1.html">
+     Guide to Exercise 1
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_1.html">Guide to Exercise 1</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistical Mechanics
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="a_simple_example.html">A simple example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rev_thermodyn.html">Review of thermodynamics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_2.html">Guide to Exercise 2</a></li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Rev_thermodynamics.html">
+   Thermodynamics and statistical mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="a_simple_example.html">
+     A simple example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rev_thermodyn.html">
+     Review of thermodynamics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_2.html">
+     Guide to Exercise 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Postulates_SM.html">
+   Postulates of statistical mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="phase_space_observables.html">
+     Phase space and Observables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="entropy_exp.html">
+     The fundamental postulate
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Liouville_theorem.html">
+     Liouville’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mc_ensemble.html">
+     Microcanonical ensemble
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="c_ensemble.html">
+     Canonical ensemble
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_3.html">
+     Guide to Exercise 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="g_gc_ensemble.html">
+     Generalized ensemble and grand canonical ensemble
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="density_matrix.html">
+     Density operator formalism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ergodicity.html">
+     Ergodicity (Do we really need it?)
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_3.html">Guide to Exercise 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
-<li class="toctree-l2"><a class="reference internal" href="density_matrix.html">Density operator formalism</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity (Do we really need it?)</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Application of statistical mechanics
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="free_systems.html">Other interacting free systems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_4.html">Guide to Exercise 4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2nd_quantization.html">Second quantization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_5.html">Guide to Exercise 5</a></li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="free_systems.html">
+   Other interacting free systems
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="oscillators.html">
+     Oscillators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_4.html">
+     Guide to Exercise 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fermion_Boson.html">
+     Free Fermions and Bosons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2nd_quantization.html">
+     Second quantization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="phonon_photon.html">
+     Phonon and photon
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_5.html">
+     Guide to Exercise 5
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="phases_transitions.html">
+   Phases and phase transitions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="phase_diagram.html">
+     Phases and phase diagram
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ising_models.html">
+     Ising models and spontaneous symmetry breaking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ising_models_2.html">
+     Transfer matrix method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MFT.html">
+     Mean-field theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="GL.html">
+     Teaser of the Ginsburg-Landau theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_6.html">
+     Guide to Exercise 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="biblio.html">
+   Epilogue
+  </a>
+ </li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="phase_diagram.html">Phases and phase diagram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Ising_models.html">Ising models and spontaneous symmetry breaking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Ising_models_2.html">Transfer matrix method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MFT.html">Mean-field theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_6.html">Guide to Exercise 6</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="exercise_0.html">Exercise</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Exercise 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_2.html">Exercise 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_3.html">Exercise 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_4.html">Exercise 4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_5.html">Exercise 5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_6.html">Exercise 6</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_0.html">Basic introduction of python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_1.html">Basic numerics and plot</a></li>
-</ul>
-</li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="exercise_0.html">
+   Exercise
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_2.html">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_3.html">
+     Exercise 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_4.html">
+     Exercise 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_5.html">
+     Exercise 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_6.html">
+     Exercise 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="numerical_tools.html">
+   Numerical tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Python_tutorial_0.html">
+     Basic introduction of python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Python_tutorial_1.html">
+     Basic numerics and plot
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
   
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
     </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercise_1.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="_sources/exercise_1.md" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.md</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
+    <div class="header-article__right">
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercise 1</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexercise_1.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/exercise_1.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Exercise 1</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <div class="tex2jax_ignore mathjax_ignore section" id="exercise-1">
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-1">
 <span id="id1"></span><h1>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h1>
 <div class="tip admonition" id="prob-1-1">
 <p class="admonition-title">Problem 1 (Some Gaussian integrals)</p>
-<ol class="arabic">
+<ol>
 <li><p>Evaluate the simple generalization of the Gaussian integral we discussed in the lecture.</p>
 <div class="math notranslate nohighlight">
 \[	
@@ -466,7 +669,7 @@ One should find the result that <span class="math notranslate nohighlight">\(G(x
 <div class="tip admonition" id="prob-1-2">
 <p class="admonition-title">Problem 2 (Experiment for central limit theorem)</p>
 <p>Before we proof the central limit theorem, let’s try to do a simple numerical experiment. Consider a random variable <span class="math notranslate nohighlight">\(X\)</span> with probability distribution function <span class="math notranslate nohighlight">\(P(X)\)</span>. In general, we require <span class="math notranslate nohighlight">\(P(X)\)</span> having a well defined mean and variance. However, to construct a simplest nontrivial mathematical experiment. Let’s take <span class="math notranslate nohighlight">\(P(X)\)</span> to be a box distribution ranging from <span class="math notranslate nohighlight">\(-1\)</span> to <span class="math notranslate nohighlight">\(1\)</span>. That is, <span class="math notranslate nohighlight">\(P(X)=\frac{1}{2}\)</span> if <span class="math notranslate nohighlight">\(X\in[-1,1]\)</span>, else <span class="math notranslate nohighlight">\(P(X)=0\)</span>. The distribution obviously have a well defined mean and variance (Why? Convince yourself it’s true). Now, lets try to calculate the following quantity and plot it’s distribution function with the Gaussian function with the same variance.</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Distribution function of the sum of two random variables: <span class="math notranslate nohighlight">\(S_2=X_1+X_2\)</span>, with <span class="math notranslate nohighlight">\(X_1\)</span> and <span class="math notranslate nohighlight">\(X_2\)</span> from <span class="math notranslate nohighlight">\(P(X)\)</span>. Find <span class="math notranslate nohighlight">\(P(S_2)\)</span>, evaluate the variance of <span class="math notranslate nohighlight">\(S_2\)</span> and plot <span class="math notranslate nohighlight">\(P(S_2)\)</span> and the Gaussian with the same mean and variance on the same graph.</p></li>
 <li><p>Distribution function of the sum of three random variables: <span class="math notranslate nohighlight">\(S_3=X_1+X_2+X_3\)</span>, with <span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(X_2\)</span> and <span class="math notranslate nohighlight">\(X_3\)</span> from <span class="math notranslate nohighlight">\(P(X)\)</span>. Find <span class="math notranslate nohighlight">\(P(S_3)\)</span>, evaluate the variance of <span class="math notranslate nohighlight">\(S_3\)</span> and plot <span class="math notranslate nohighlight">\(P(S_3)\)</span> and the Gaussian with the same mean and variance on the same graph.</p></li>
 </ol>
@@ -497,7 +700,7 @@ One should find the result that <span class="math notranslate nohighlight">\(G(x
 \]</div>
 <p>We would like to approximate <span class="math notranslate nohighlight">\(\widetilde{P}_1(k)\)</span> as <span class="math notranslate nohighlight">\(\widetilde{P}_1(k)\approx e^{f(k)}\)</span>. This expression will be useful since we can express <span class="math notranslate nohighlight">\(P_N(X)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\left[ \widetilde{P}_1(k) \right]^N e^{ikX}dk=\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{N f(k)} e^{ikX}dk\)</span>. We know how to perform this type of integral at least to quadratic power of <span class="math notranslate nohighlight">\(k\)</span>. (With a simple change of variable, the integral to quadratic order in <span class="math notranslate nohighlight">\(k\)</span> is identical with the problem 1.)
 So our next goal is to find <span class="math notranslate nohighlight">\(f(k)\)</span> in the expression <span class="math notranslate nohighlight">\(\widetilde{P}_1(k)\approx e^{f(k)}\)</span>.</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Use the Taylor expansion of <span class="math notranslate nohighlight">\(\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}+\mathcal{O}(x^4)\)</span>, we can express <span class="math notranslate nohighlight">\(\ln \widetilde{P}_1(k)=\ln \left[ 1-ik\langle x\rangle +\frac{(-ik)^2}{2!}\langle x^2\rangle +\frac{(-ik)^3}{3!}\langle x^3\rangle +\dots \right]\)</span> in powers of <span class="math notranslate nohighlight">\(k\)</span>. Then we can exponentiate this expression to get <span class="math notranslate nohighlight">\(f(k)\)</span>. Find the expression of <span class="math notranslate nohighlight">\(f(k,k^2,k^3)\)</span> to the third order in <span class="math notranslate nohighlight">\(k\)</span>. (Hint: your result will looks like <span class="math notranslate nohighlight">\(f(k)\approx C_1 k+ C_2 k^2+C_3 k^3+\dots\)</span>, find <span class="math notranslate nohighlight">\(C_1,C_2,C_3\)</span> as a function of <span class="math notranslate nohighlight">\(\langle x\rangle ,\langle x^2\rangle ,\langle x^3\rangle \)</span>.</p></li>
 <li><p>Then, we can formally express <span class="math notranslate nohighlight">\(P_N(X)\)</span> as</p></li>
 </ol>
@@ -518,7 +721,7 @@ We can use the following trick to express this integral in another form. In <spa
 	&amp;= \left[ 1+iC_3\left( \frac{\partial^3}{\partial X^3} \right)^3+\dots \right]\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{N(C_1k+C_2k^2)} e^{ikX} dk
 \end{split}\]</div>
 <p>As mentioned before, the last integral is a Gaussian integral that we know how to perform. Complete the square and derive the result of <span class="math notranslate nohighlight">\(P_N(X)\)</span> to leading order (ignoring the <span class="math notranslate nohighlight">\(iC_3\left( \frac{\partial^3}{\partial X^3} \right)^3\)</span> term and beyond.). (Furthermore, you can ask: how the higher-order correction scales as a function of <span class="math notranslate nohighlight">\(N\)</span>, but this will be left as a challenge that is beyond this homework problem.)</p>
-<ol class="arabic simple" start="3">
+<ol class="simple">
 <li><p>After we answered the above questions, we basically derived the <em>central limit theorem</em>. That is, the distribution function for the sum of random variables from a distribution function <span class="math notranslate nohighlight">\(P_1(x)\)</span> is a Gaussian. That is a very general result. What conditions does <span class="math notranslate nohighlight">\(P_1(x)\)</span> need to satisfy to apply the central limit theorem? Will it work when <span class="math notranslate nohighlight">\(P_1(x)\)</span> is a Gaussian distribution? Will it work when <span class="math notranslate nohighlight">\(P_1(x)\)</span> is a Cauchy distribution?</p></li>
 </ol>
 </div>
@@ -529,19 +732,21 @@ We can use the following trick to express this integral in another form. In <spa
 <li><p>We assume the joint of the monomers can rotate freely, \emph{i.e.} the potential energy is independent of the bonding angle, <span class="math notranslate nohighlight">\(\phi\)</span>, between two nearby monomers.</p></li>
 <li><p>We assume the monomers can overlap with each other in space and have no interaction between each other.
 The model with above two assumptions is the freely jointed chain model. It is the idealization of polymers analogous to ideal gas model for gases.</p>
-<div class="figure align-default" id="polymers-fig">
+<figure class="align-default" id="polymers-fig">
 <a class="reference internal image-reference" href="_images/polymers.pdf"><img alt="_images/polymers.pdf" src="_images/polymers.pdf" style="width: 750px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Schematic picture of a single chain polymer molecular formed by the monomers represented by the grey oval.</span><a class="headerlink" href="#polymers-fig" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Schematic picture of a single chain polymer molecular formed by the monomers represented by the grey oval.</span><a class="headerlink" href="#polymers-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </li>
 </ul>
 <p>A key property that we are interested in is the size of the polymer. Usually the polymer coils up. The way they coils up will be a competition between the entropy and the energetics.  Therefore, the size of the polymer is not simply the number of monomers, <span class="math notranslate nohighlight">\(N\)</span>, times the size of the monomer, <span class="math notranslate nohighlight">\(a\)</span>. Instead, we need to use some statistical description to characterize the size of the polymer.  Usually, we use the root-mean-square end-to-end distance, <span class="math notranslate nohighlight">\(\langle r^2\rangle ^{1/2}\)</span>, as a measure for the size of the polymer. Here, <span class="math notranslate nohighlight">\(r\)</span> is the distance from one end of the polymer to the other in three-dimensional space. The average is taken over all possible ways the polymer coils. One of the configuration is simple, if all the monomers are aligned in one direction, the end-to-end distance <span class="math notranslate nohighlight">\(r_{straight}=Na\)</span>. However, this is just one of the possible value of <span class="math notranslate nohighlight">\(r\)</span>, once the polymer coils, <span class="math notranslate nohighlight">\(\langle r^2\rangle ^{1/2}&lt;Na\)</span></p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>It is interesting to observe that the freely jointed model in one-dimension is actually the simple one-dimensional random walk we discussed during the lecture. The step size is just the size of the monomer. The one-dimensional constraint restricts <span class="math notranslate nohighlight">\(\phi=0/\pi\)</span>. Let’s start in this simple limit and use <span class="math notranslate nohighlight">\(x\)</span> to represent the end-to-end distance in one-dimensional case. Derive the probability distribution <span class="math notranslate nohighlight">\(P_{1D}(x,N)\)</span> when the number of monomers <span class="math notranslate nohighlight">\(N\)</span> is large.</p></li>
 <li><p>For the three-dimensional case, we assume the orientation is completely random and the vector from monomer <span class="math notranslate nohighlight">\(i\)</span> and the vector for monomer <span class="math notranslate nohighlight">\(i+1\)</span> are uncorrelated. \emph{i.e.} <span class="math notranslate nohighlight">\(\langle \boldsymbol{d}_{i}\cdot \boldsymbol{d}_{j}\rangle_{i\neq j}=0\)</span>. Therefore, we expect <span class="math notranslate nohighlight">\(N\)</span> to be distributed evenly <span class="math notranslate nohighlight">\(N_{x}=N_{y}=N_{z}=\frac{N}{3}\)</span>. Here, <span class="math notranslate nohighlight">\(N_{x}\)</span> is a rough definition of the monomer belongs to the monomer in <span class="math notranslate nohighlight">\(x\)</span> direction. We can simply consider the projection of the monomer to the <span class="math notranslate nohighlight">\(x,y,z\)</span> direction. If the projection to <span class="math notranslate nohighlight">\(x\)</span> direction is has the largest size, we said it is a <span class="math notranslate nohighlight">\(x\)</span> monomer that should be counted in <span class="math notranslate nohighlight">\(N_x\)</span>. Derive <span class="math notranslate nohighlight">\(\langle r^2\rangle ^{\frac{1}{2}}\)</span> and express it using <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(a\)</span>. This is a simple estimation for the size of the polymer. (Sometimes you will see people use the radius of gyration <span class="math notranslate nohighlight">\(r_{g}^2\)</span> to estimate the size of the polymer. <span class="math notranslate nohighlight">\(r_g\)</span> is the average distance between monomers and the center of mass. It turns out the length scale, <span class="math notranslate nohighlight">\(\langle r_g^2\rangle \)</span>, will be proportional with <span class="math notranslate nohighlight">\(\langle r^2\rangle \)</span>. We will not discuss the calculation here, but just mention the fact that using the root mean square of the end-to-end distance capture the essential information for the size of the polymer.)</p></li>
 </ol>
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -555,7 +760,7 @@ The model with above two assumptions is the freely jointed chain model. It is th
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -563,91 +768,50 @@ The model with above two assumptions is the freely jointed chain model. It is th
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="exercise_0.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Exercise</p>
-      </div>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="exercise_0.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Exercise</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="exercise_2.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="exercise_2.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Exercise 2</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
-</div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Yi-Ping Huang (黃一平)
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2022.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
     </div>
-  </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Yi-Ping Huang (黃一平)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>

@@ -1,45 +1,36 @@
 
-
 <!DOCTYPE html>
 
-
-<html >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic introduction of python &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    <title>Basic introduction of python &#8212; Statistical Mechanics (I) -- PHYS521000 統計力學(一）</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -47,13 +38,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script src="_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -63,93 +54,61 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Python_tutorial_0';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Basic numerics and plot" href="Python_tutorial_1.html" />
     <link rel="prev" title="Numerical tools" href="numerical_tools.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="syllabus.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistical Mechanics (I) -- PHYS521000 統計力學(一）</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -158,445 +117,1096 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentals</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Fundamentals
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="How_to_ask.html">How to ask a question?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development_of_physics.html">The development of physics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="thermodynamics.html">Thermodynamics as an effective theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation: Why learn statistical mechanics?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scope.html">The applications of statistical mechanics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basic_prob.html">Basic concepts in probability theory</a></li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="introduction.html">
+   Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="How_to_ask.html">
+     How to ask a question?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="development_of_physics.html">
+     The development of physics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="thermodynamics.html">
+     Thermodynamics as an effective theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="motivation.html">
+     Motivation: Why learn statistical mechanics?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="scope.html">
+     The applications of statistical mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basic_prob.html">
+     Basic concepts in probability theory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="random_walk_and_emergent_properties.html">
+   Random walk and emergent properties
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1DRW.html">
+     One dimensional random walk
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="drunkards_walk.html">
+     Drunkard’s walk
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="diffusion_eq.html">
+     The diffusion equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_1.html">
+     Guide to Exercise 1
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="random_walk_and_emergent_properties.html">Random walk and emergent properties</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="1DRW.html">One dimensional random walk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="drunkards_walk.html">Drunkard’s walk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="diffusion_eq.html">The diffusion equation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_1.html">Guide to Exercise 1</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistical Mechanics
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Rev_thermodynamics.html">Thermodynamics and statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="a_simple_example.html">A simple example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rev_thermodyn.html">Review of thermodynamics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_2.html">Guide to Exercise 2</a></li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Rev_thermodynamics.html">
+   Thermodynamics and statistical mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="a_simple_example.html">
+     A simple example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rev_thermodyn.html">
+     Review of thermodynamics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_2.html">
+     Guide to Exercise 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Postulates_SM.html">
+   Postulates of statistical mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="phase_space_observables.html">
+     Phase space and Observables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="entropy_exp.html">
+     The fundamental postulate
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Liouville_theorem.html">
+     Liouville’s theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mc_ensemble.html">
+     Microcanonical ensemble
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="c_ensemble.html">
+     Canonical ensemble
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_3.html">
+     Guide to Exercise 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="g_gc_ensemble.html">
+     Generalized ensemble and grand canonical ensemble
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="density_matrix.html">
+     Density operator formalism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ergodicity.html">
+     Ergodicity (Do we really need it?)
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Postulates_SM.html">Postulates of statistical mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="phase_space_observables.html">Phase space and Observables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="entropy_exp.html">The fundamental postulate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Liouville_theorem.html">Liouville’s theorem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mc_ensemble.html">Microcanonical ensemble</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c_ensemble.html">Canonical ensemble</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_3.html">Guide to Exercise 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="g_gc_ensemble.html">Generalized ensemble and grand canonical ensemble</a></li>
-<li class="toctree-l2"><a class="reference internal" href="density_matrix.html">Density operator formalism</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ergodicity.html">Ergodicity (Do we really need it?)</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Application of statistical mechanics</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Application of statistical mechanics
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="free_systems.html">Other interacting free systems</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="oscillators.html">Oscillators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_4.html">Guide to Exercise 4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Fermion_Boson.html">Free Fermions and Bosons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2nd_quantization.html">Second quantization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="phonon_photon.html">Phonon and photon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_5.html">Guide to Exercise 5</a></li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="free_systems.html">
+   Other interacting free systems
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="oscillators.html">
+     Oscillators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_4.html">
+     Guide to Exercise 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fermion_Boson.html">
+     Free Fermions and Bosons
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2nd_quantization.html">
+     Second quantization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="phonon_photon.html">
+     Phonon and photon
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_5.html">
+     Guide to Exercise 5
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="phases_transitions.html">
+   Phases and phase transitions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="phase_diagram.html">
+     Phases and phase diagram
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ising_models.html">
+     Ising models and spontaneous symmetry breaking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ising_models_2.html">
+     Transfer matrix method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="MFT.html">
+     Mean-field theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="GL.html">
+     Teaser of the Ginsburg-Landau theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guide_exer_6.html">
+     Guide to Exercise 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="biblio.html">
+   Epilogue
+  </a>
+ </li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="phases_transitions.html">Phases and phase transitions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="phase_diagram.html">Phases and phase diagram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Ising_models.html">Ising models and spontaneous symmetry breaking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Ising_models_2.html">Transfer matrix method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MFT.html">Mean-field theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GL.html">Teaser of the Ginsburg-Landau theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guide_exer_6.html">Guide to Exercise 6</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="exercise_0.html">Exercise</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="exercise_1.html">Exercise 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_2.html">Exercise 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_3.html">Exercise 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_4.html">Exercise 4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_5.html">Exercise 5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercise_6.html">Exercise 6</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="numerical_tools.html">Numerical tools</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Basic introduction of python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Python_tutorial_1.html">Basic numerics and plot</a></li>
-</ul>
-</li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="exercise_0.html">
+   Exercise
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_1.html">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_2.html">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_3.html">
+     Exercise 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_4.html">
+     Exercise 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_5.html">
+     Exercise 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_6.html">
+     Exercise 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="numerical_tools.html">
+   Numerical tools
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Basic introduction of python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Python_tutorial_1.html">
+     Basic numerics and plot
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
   
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
     </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
   </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPython_tutorial_0.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="_sources/Python_tutorial_0.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
+  <div class="menu-dropdown__content">
+    <ul>
       <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Python_tutorial_0.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
 >
   
 
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-
-
-
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Basic introduction of python</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-environment-for-python">Setting the environment for Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-numerical-approach">Why numerical approach?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#need-to-confirm-the-mechanism-of-your-idea">Need to confirm the mechanism of your idea</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#need-to-connect-with-real-experiments">Need to connect with real experiments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerics-for-many-body-physics-is-non-trivial">Numerics for many body physics is non-trivial!</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-data-to-convey-what-you-mean">Generate data to convey what you mean</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#my-point-of-view-of-numerical-approaches">My point of view of numerical approaches</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-of-numerical-loading">Level of numerical loading</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-well-structured-general-purpose-language">Simple, well-structured, general-purpose language</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level">High-level</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive">Interactive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#speed">Speed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vibrant-community">Vibrant community</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rich-scientific-computing-libraries">Rich scientific computing libraries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessible-for-everyone-no-need-to-pay-money">Accessible for everyone. No need to pay money</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-python-key-components">Scientific Python Key Components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-workflow">Jupyter Workflow</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-primary-workflows">Two primary workflows:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-usage">Notebook Usage</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-objects">Variables and Objects</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overloading">Overloading</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-as-references">Variables as References</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-objects">Types of Objects</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-types">Basic Types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-scientific-types">Common Scientific Types</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-types-numeric">Basic Types: Numeric</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#careful-with-integer-division">Careful with integer division!</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-types-strings">Basic Types: Strings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-types-lists">Basic Types: Lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-types-dictionaries">Basic Types: Dictionaries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-types-tuples">Basic Types: Tuples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">Control Flow</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else">If/elif/else</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For Loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">While Loops</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-are-objects">Functions are Objects</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPython_tutorial_0.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Python_tutorial_0.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-the-environment-for-python">
+   Setting the environment for Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-numerical-approach">
+   Why numerical approach?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#need-to-confirm-the-mechanism-of-your-idea">
+     Need to confirm the mechanism of your idea
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#need-to-connect-with-real-experiments">
+     Need to connect with real experiments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerics-for-many-body-physics-is-non-trivial">
+     Numerics for many body physics is non-trivial!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-data-to-convey-what-you-mean">
+     Generate data to convey what you mean
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#my-point-of-view-of-numerical-approaches">
+   My point of view of numerical approaches
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#level-of-numerical-loading">
+     Level of numerical loading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-python">
+   Why Python?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-well-structured-general-purpose-language">
+     Simple, well-structured, general-purpose language
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#high-level">
+     High-level
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interactive">
+     Interactive
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#speed">
+     Speed
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vibrant-community">
+     Vibrant community
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rich-scientific-computing-libraries">
+     Rich scientific computing libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessible-for-everyone-no-need-to-pay-money">
+     Accessible for everyone. No need to pay money
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scientific-python-key-components">
+   Scientific Python Key Components
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-workflow">
+   Jupyter Workflow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-primary-workflows">
+     Two primary workflows:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notebook-usage">
+     Notebook Usage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables-and-objects">
+   Variables and Objects
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overloading">
+     Overloading
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables-as-references">
+     Variables as References
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-objects">
+   Types of Objects
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-types">
+     Basic Types
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-scientific-types">
+     Common Scientific Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-types-numeric">
+   Basic Types: Numeric
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#careful-with-integer-division">
+     Careful with integer division!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-types-strings">
+   Basic Types: Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-types-lists">
+   Basic Types: Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-types-dictionaries">
+   Basic Types: Dictionaries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-types-tuples">
+   Basic Types: Tuples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#control-flow">
+   Control Flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#if-elif-else">
+     If/elif/else
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loops">
+     For Loops
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-loops">
+     While Loops
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions-are-objects">
+     Functions are Objects
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Basic introduction of python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-the-environment-for-python">
+   Setting the environment for Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-numerical-approach">
+   Why numerical approach?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#need-to-confirm-the-mechanism-of-your-idea">
+     Need to confirm the mechanism of your idea
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#need-to-connect-with-real-experiments">
+     Need to connect with real experiments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerics-for-many-body-physics-is-non-trivial">
+     Numerics for many body physics is non-trivial!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-data-to-convey-what-you-mean">
+     Generate data to convey what you mean
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#my-point-of-view-of-numerical-approaches">
+   My point of view of numerical approaches
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#level-of-numerical-loading">
+     Level of numerical loading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-python">
+   Why Python?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-well-structured-general-purpose-language">
+     Simple, well-structured, general-purpose language
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#high-level">
+     High-level
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interactive">
+     Interactive
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#speed">
+     Speed
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vibrant-community">
+     Vibrant community
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rich-scientific-computing-libraries">
+     Rich scientific computing libraries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessible-for-everyone-no-need-to-pay-money">
+     Accessible for everyone. No need to pay money
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scientific-python-key-components">
+   Scientific Python Key Components
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-workflow">
+   Jupyter Workflow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-primary-workflows">
+     Two primary workflows:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notebook-usage">
+     Notebook Usage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables-and-objects">
+   Variables and Objects
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overloading">
+     Overloading
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables-as-references">
+     Variables as References
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-objects">
+   Types of Objects
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-types">
+     Basic Types
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-scientific-types">
+     Common Scientific Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-types-numeric">
+   Basic Types: Numeric
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#careful-with-integer-division">
+     Careful with integer division!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-types-strings">
+   Basic Types: Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-types-lists">
+   Basic Types: Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-types-dictionaries">
+   Basic Types: Dictionaries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-types-tuples">
+   Basic Types: Tuples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#control-flow">
+   Control Flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#if-elif-else">
+     If/elif/else
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loops">
+     For Loops
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-loops">
+     While Loops
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions-are-objects">
+     Functions are Objects
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <div class="tex2jax_ignore mathjax_ignore section" id="basic-introduction-of-python">
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-introduction-of-python">
 <h1>Basic introduction of python<a class="headerlink" href="#basic-introduction-of-python" title="Permalink to this headline">#</a></h1>
-<div class="section" id="setting-the-environment-for-python">
+<section id="setting-the-environment-for-python">
 <h2>Setting the environment for Python<a class="headerlink" href="#setting-the-environment-for-python" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> : Include essential packages for basic scientific computation. It is easy to install it just follow the instruction.</p></li>
 <li><p>Not required, but easy to use for beginners.</p></li>
 </ul>
-</div>
-<div class="section" id="why-numerical-approach">
+</section>
+<section id="why-numerical-approach">
 <h2>Why numerical approach?<a class="headerlink" href="#why-numerical-approach" title="Permalink to this headline">#</a></h2>
-<div class="section" id="need-to-confirm-the-mechanism-of-your-idea">
+<section id="need-to-confirm-the-mechanism-of-your-idea">
 <h3>Need to confirm the mechanism of your idea<a class="headerlink" href="#need-to-confirm-the-mechanism-of-your-idea" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>An idea for the novel physics</p></li>
 <li><p>Numerical experiments driven by scientific ideas</p></li>
 <li><p>Numerical experiments driven theoretical ideas</p></li>
 </ul>
-</div>
-<div class="section" id="need-to-connect-with-real-experiments">
+</section>
+<section id="need-to-connect-with-real-experiments">
 <h3>Need to connect with real experiments<a class="headerlink" href="#need-to-connect-with-real-experiments" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>To strenthen the abstract idea and connect with real world</p></li>
 <li><p>Get additional information that is difficult to access in experiments and make prediction that is accessible for experiments</p></li>
 </ul>
-</div>
-<div class="section" id="numerics-for-many-body-physics-is-non-trivial">
+</section>
+<section id="numerics-for-many-body-physics-is-non-trivial">
 <h3>Numerics for many body physics is non-trivial!<a class="headerlink" href="#numerics-for-many-body-physics-is-non-trivial" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The problem itself is a intelletral challenging and interesting discrete mathmetical problems.</p></li>
 <li><p>Hardware limitation force one to think in a smart way</p></li>
 </ul>
-</div>
-<div class="section" id="generate-data-to-convey-what-you-mean">
+</section>
+<section id="generate-data-to-convey-what-you-mean">
 <h3>Generate data to convey what you mean<a class="headerlink" href="#generate-data-to-convey-what-you-mean" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Statistics</p></li>
 <li><p>Plots</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="my-point-of-view-of-numerical-approaches">
+</section>
+</section>
+<section id="my-point-of-view-of-numerical-approaches">
 <h2>My point of view of numerical approaches<a class="headerlink" href="#my-point-of-view-of-numerical-approaches" title="Permalink to this headline">#</a></h2>
-<div class="section" id="level-of-numerical-loading">
+<section id="level-of-numerical-loading">
 <h3>Level of numerical loading<a class="headerlink" href="#level-of-numerical-loading" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Light: Mathematica, Python, matlab (For quick checking and benchmark. Once the simple concept passes, use the medium or heavy numerical approach)</p></li>
 <li><p>Heavy: C/C++, Fortran</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="why-python">
+</section>
+</section>
+<section id="why-python">
 <h2>Why Python?<a class="headerlink" href="#why-python" title="Permalink to this headline">#</a></h2>
-<div class="section" id="simple-well-structured-general-purpose-language">
+<section id="simple-well-structured-general-purpose-language">
 <h3>Simple, well-structured, general-purpose language<a class="headerlink" href="#simple-well-structured-general-purpose-language" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Readability great for quality control and collaboration</p></li>
 <li><p>Code how you think: many books now use python as pseudocode</p></li>
 </ul>
-</div>
-<div class="section" id="high-level">
+</section>
+<section id="high-level">
 <h3>High-level<a class="headerlink" href="#high-level" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Rapid development</p></li>
 <li><p>Do complicated things in few lines</p></li>
 </ul>
-</div>
-<div class="section" id="interactive">
+</section>
+<section id="interactive">
 <h3>Interactive<a class="headerlink" href="#interactive" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Rapid development and exploration</p></li>
 <li><p>No need to compile, run, debug, revise, compile</p></li>
 <li><p>Data collection, generation, analysis and publication plotting in one place</p></li>
 </ul>
-</div>
-<div class="section" id="speed">
+</section>
+<section id="speed">
 <h3>Speed<a class="headerlink" href="#speed" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Usually plenty fast – will discuss more</p></li>
 <li><p>Your development time is more important than CPU time</p></li>
 <li><p>Not as fast as C, C++, Fortran but these can be easily woven in where necessary</p></li>
 </ul>
-</div>
-<div class="section" id="vibrant-community">
+</section>
+<section id="vibrant-community">
 <h3>Vibrant community<a class="headerlink" href="#vibrant-community" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Great online documentation / help available</p></li>
 <li><p>Open source</p></li>
 </ul>
-</div>
-<div class="section" id="rich-scientific-computing-libraries">
+</section>
+<section id="rich-scientific-computing-libraries">
 <h3>Rich scientific computing libraries<a class="headerlink" href="#rich-scientific-computing-libraries" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Don’t reinvent the wheel. Only reinvent important wheels!</p></li>
 </ul>
-</div>
-<div class="section" id="accessible-for-everyone-no-need-to-pay-money">
+</section>
+<section id="accessible-for-everyone-no-need-to-pay-money">
 <h3>Accessible for everyone. No need to pay money<a class="headerlink" href="#accessible-for-everyone-no-need-to-pay-money" title="Permalink to this headline">#</a></h3>
-</div>
-</div>
-<div class="section" id="scientific-python-key-components">
+</section>
+</section>
+<section id="scientific-python-key-components">
 <h2>Scientific Python Key Components<a class="headerlink" href="#scientific-python-key-components" title="Permalink to this headline">#</a></h2>
 <p>The core pieces of the scientific Python platform are:</p>
 <p><strong><a class="reference external" href="http://www.python.org">Python</a></strong>, the language interpreter</p>
@@ -641,26 +1251,26 @@ document.write(`
 <ul class="simple">
 <li><p>For more sophisticated 3-D needs (won’t discuss)</p></li>
 </ul>
-</div>
-<div class="section" id="jupyter-workflow">
+</section>
+<section id="jupyter-workflow">
 <h2>Jupyter Workflow<a class="headerlink" href="#jupyter-workflow" title="Permalink to this headline">#</a></h2>
-<div class="section" id="two-primary-workflows">
+<section id="two-primary-workflows">
 <h3>Two primary workflows:<a class="headerlink" href="#two-primary-workflows" title="Permalink to this headline">#</a></h3>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Work in a Jupyter/IPython notebook. Write code in cells, analyze, plot, etc. Everything stored in <strong>.ipynb</strong> file.</p></li>
 <li><p>Write code in <strong>.py</strong> files using a text editor and run those within the IPython notebook or from the shell.</p></li>
 </ol>
 <p>We still stick to the first.</p>
 <p>While you are using a notebook, there is a <strong>kernel</strong> running which actually executes your commands and stores your variables, etc. If you quit/restart the kernel, all variables will be forgotten and you will need to re-execute the commands that set them up. This can be useful if you want to reset things. The input and output that is visible in the notebook is saved in the notebook file.</p>
 <p><em>Note:</em> .py files are called <strong>scripts</strong> if they consist primarily of a sequence of commands to be run and <strong>modules</strong> if they consist primarily of function definitions for import into other scripts/notebooks.</p>
-</div>
-<div class="section" id="notebook-usage">
+</section>
+<section id="notebook-usage">
 <h3>Notebook Usage<a class="headerlink" href="#notebook-usage" title="Permalink to this headline">#</a></h3>
 <p>Two modes: editing and command mode.</p>
 <p>Press escape to go to command mode.
 Press return to go into editing mode on selected cell.</p>
 <p>In command mode:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Press h for a list of keyboard commands.</p></li>
 <li><p>Press a or b to create a new cell above or below the current.</p></li>
 <li><p>Press m or y to convert the current cell to markdown or code.</p></li>
@@ -668,13 +1278,13 @@ Press return to go into editing mode on selected cell.</p>
 <li><p>Press d d to delete the current cell. (Careful!)</p></li>
 </ol>
 <p>In editing mode:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Press tab for autocomplete</p></li>
 <li><p>Press shift-tab for help on current object</p></li>
 <li><p>Shift-enter to execute current cell</p></li>
 </ol>
 <p>Two types of cells:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Markdown for notes (like this)</p></li>
 <li><p>Code for things to execute</p></li>
 </ol>
@@ -775,9 +1385,9 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="variables-and-objects">
+</section>
+</section>
+<section id="variables-and-objects">
 <h2>Variables and Objects<a class="headerlink" href="#variables-and-objects" title="Permalink to this headline">#</a></h2>
 <p>Everything in memory in Python is an object. Every object has a type such as int (for integer), str (for strings) or ndarray (for numpy arrays). Variables can reference objects of any type and that type can change.</p>
 <p>The equals sign in programming does not mean ‘is equal to’ as in math. It means <strong>‘assign the object on the right to the variable on the left’</strong>.</p>
@@ -839,16 +1449,6 @@ Press return to go into editing mode on selected cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
 </pre></div>
 </div>
 </div>
@@ -973,7 +1573,7 @@ Press return to go into editing mode on selected cell.</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_128278</span><span class="o">/</span><span class="mf">1750888518.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">Input In [25],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">2</span><span class="o">+</span><span class="n">a</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
@@ -981,11 +1581,11 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 </div>
 </div>
-<div class="section" id="overloading">
+<section id="overloading">
 <h3>Overloading<a class="headerlink" href="#overloading" title="Permalink to this headline">#</a></h3>
 <p>Operators and functions will try to execute no matter what type of objects are passed to them, but they may do different things depending on the type. + adds numbers and concatenates strings.</p>
-</div>
-<div class="section" id="variables-as-references">
+</section>
+<section id="variables-as-references">
 <h3>Variables as References<a class="headerlink" href="#variables-as-references" title="Permalink to this headline">#</a></h3>
 <p>All variables are <strong>references</strong> to the objects they contain. Assignment does not make copies of objects.</p>
 <div class="cell docutils container">
@@ -1039,13 +1639,13 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="types-of-objects">
+</section>
+</section>
+<section id="types-of-objects">
 <h2>Types of Objects<a class="headerlink" href="#types-of-objects" title="Permalink to this headline">#</a></h2>
-<div class="section" id="basic-types">
+<section id="basic-types">
 <h3>Basic Types<a class="headerlink" href="#basic-types" title="Permalink to this headline">#</a></h3>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Numeric, Immutable</p></li>
 <li><p>Integer: -1, 0, 1, 2, …</p></li>
 <li><p>Float: 1.2, 1e8</p></li>
@@ -1058,33 +1658,33 @@ Press return to go into editing mode on selected cell.</p>
 <li><p>Ordered collection of other objects, represented by parentheses</p></li>
 <li><p>can’t change after creation (<em>immutable</em>)</p></li>
 </ul>
-<ol class="arabic simple" start="3">
+<ol class="simple">
 <li><p>Lists, [0,1,2,”hi”, 4]</p></li>
 </ol>
 <ul class="simple">
 <li><p>Ordered collection of other objects, represented by square brackets</p></li>
 <li><p>can add/remove/change elements after creation (<em>mutable</em>)</p></li>
 </ul>
-<ol class="arabic simple" start="4">
+<ol class="simple">
 <li><p>Dictionaries, {‘hi’: 3, 4: 7, ‘key’: ‘value’}</p></li>
 <li><p>Functions, def func()</p></li>
 </ol>
-</div>
-<div class="section" id="common-scientific-types">
+</section>
+<section id="common-scientific-types">
 <h3>Common Scientific Types<a class="headerlink" href="#common-scientific-types" title="Permalink to this headline">#</a></h3>
-<ol class="arabic simple" start="6">
+<ol class="simple">
 <li><p>NumPy arrays, array([1,2,3])</p></li>
 </ol>
 <ul class="simple">
 <li><p>Like lists but all entries have same type</p></li>
 </ul>
-<ol class="arabic simple" start="7">
+<ol class="simple">
 <li><p>Sparse arrays, scipy.sparse</p></li>
 <li><p>Pandas DataFrames, high level ‘table’ a bit like an excel spreadsheet</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="basic-types-numeric">
+</section>
+</section>
+<section id="basic-types-numeric">
 <h2>Basic Types: Numeric<a class="headerlink" href="#basic-types-numeric" title="Permalink to this headline">#</a></h2>
 <p>There are 4 numeric types:</p>
 <ul class="simple">
@@ -1206,7 +1806,7 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 </div>
 </div>
-<div class="section" id="careful-with-integer-division">
+<section id="careful-with-integer-division">
 <h3>Careful with integer division!<a class="headerlink" href="#careful-with-integer-division" title="Permalink to this headline">#</a></h3>
 <p>In Python 3, dividing integers promotes to a float. Use // for integer division.</p>
 <div class="cell docutils container">
@@ -1246,9 +1846,9 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="basic-types-strings">
+</section>
+</section>
+<section id="basic-types-strings">
 <h2>Basic Types: Strings<a class="headerlink" href="#basic-types-strings" title="Permalink to this headline">#</a></h2>
 <p>Strings are <strong>immutable</strong> sequences of characters. This means you can’t change a character in the middle of a string, you have to create a new string.</p>
 <p>Literal strings can be written with single or double-quotes. Multi-line strings with triple quotes. ‘Raw’ strings are useful for embedding LaTeX because they treat backslashes differently.</p>
@@ -1354,19 +1954,19 @@ Press return to go into editing mode on selected cell.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="basic-types-lists">
+</section>
+<section id="basic-types-lists">
 <h2>Basic Types: Lists<a class="headerlink" href="#basic-types-lists" title="Permalink to this headline">#</a></h2>
 <p>Python lists store <strong>ordered</strong> collections of arbitrary objects. They are efficient maps <strong>from index to values</strong>. Lists are represented by square brackets [ ].</p>
 <p>Lists are <strong>mutable</strong>: their contents can be changed after they are created.</p>
 <p>It takes time O(1) to:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Lookup an entry at given index.</p></li>
 <li><p>Change an item at a given index.</p></li>
 <li><p>Append or remove (pop) from the end of the list.</p></li>
 </ol>
 <p>It takes time O(N) to:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Find items by value if you don’t know where they are.</p></li>
 <li><p>Remove items from near the beginning of the list.</p></li>
 </ol>
@@ -1577,13 +2177,13 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="basic-types-dictionaries">
+</section>
+<section id="basic-types-dictionaries">
 <h2>Basic Types: Dictionaries<a class="headerlink" href="#basic-types-dictionaries" title="Permalink to this headline">#</a></h2>
 <p>A dictionary is an efficient map <strong>from keys to values</strong>. They are represented by curly brackets {}.</p>
 <p>Dictionaries are <strong>mutable</strong> but all <strong>keys must be immutable</strong>. IE. keys can be strings, numbers, or tuples thereof but not lists or other dictionaries. Values can be anything.</p>
 <p>It is unordered but takes time O(1) to:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Lookup a value from a key</p></li>
 <li><p>Add a key, value pair</p></li>
 <li><p>Remove a key, value pair</p></li>
@@ -1689,8 +2289,8 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="basic-types-tuples">
+</section>
+<section id="basic-types-tuples">
 <h2>Basic Types: Tuples<a class="headerlink" href="#basic-types-tuples" title="Permalink to this headline">#</a></h2>
 <p>A tuple is an <strong>ordered</strong> collection of objects. They are represented by round parantheses ().</p>
 <p>Tuples are almost like lists but they are <strong>immutable</strong>. This means that they cannot be changed once they are created.</p>
@@ -1778,13 +2378,13 @@ last item is at position N-1 where N is the length of the list.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="control-flow">
+</section>
+<section id="control-flow">
 <h2>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">#</a></h2>
 <p>The flow of a program is the order in which the computer executes the statements in the code. Typically, this is in order from top to bottom. However, there are many cases where we want to change the flow in some way. For example, we might want to divide two numbers but only if the divisor is not zero. Or we might want to iterate: repeat a block of code many times for each value in some list. The commands which allow these are called control flow commands.</p>
 <p><strong>WARNING</strong>: Python cares about <strong>white space</strong>! You must <strong>INDENT CORRECTLY</strong> because that’s how Python knows when a block of code ends.</p>
 <p>Typically, people indent with 4 spaces per block but 2 spaces or tabs are okay. They must be consistent in any block.</p>
-<div class="section" id="if-elif-else">
+<section id="if-elif-else">
 <h3>If/elif/else<a class="headerlink" href="#if-elif-else" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1808,8 +2408,8 @@ At all
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="for-loops">
+</section>
+<section id="for-loops">
 <h3>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">#</a></h3>
 <p>For loops <em>iterate</em> through elements in a collection. This can be a list, tuple, dictionary, array or any other such collection.</p>
 <p>These are the most <em>Pythonic</em> way to think about iterations.</p>
@@ -1883,8 +2483,8 @@ sebastian&#39;s telephone number is 5578
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="while-loops">
+</section>
+<section id="while-loops">
 <h3>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">#</a></h3>
 <p>Repeats a block of code while a condition holds true.</p>
 <div class="cell docutils container">
@@ -1907,15 +2507,15 @@ Bark 1
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="functions">
+</section>
+</section>
+<section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
 <p>Any code that you call multiple times with different values should be wrapped up in a function. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the square of x.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Return the square of x.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
 </pre></div>
 </div>
@@ -1943,7 +2543,7 @@ Bark 1
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">printAndSquare</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print the square of x and return it.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Print the square of x and return it.&quot;&quot;&quot;</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">y</span>
@@ -1973,7 +2573,7 @@ Bark 1
 </div>
 </div>
 </div>
-<div class="section" id="functions-are-objects">
+<section id="functions-are-objects">
 <h3>Functions are Objects<a class="headerlink" href="#functions-are-objects" title="Permalink to this headline">#</a></h3>
 <p>Functions are just like any object in Python:</p>
 <div class="cell docutils container">
@@ -2036,9 +2636,9 @@ In Test!
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2052,7 +2652,7 @@ In Test!
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -2060,160 +2660,50 @@ In Test!
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="numerical_tools.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Numerical tools</p>
-      </div>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="numerical_tools.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Numerical tools</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="Python_tutorial_1.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="Python_tutorial_1.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Basic numerics and plot</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
-</div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-environment-for-python">Setting the environment for Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-numerical-approach">Why numerical approach?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#need-to-confirm-the-mechanism-of-your-idea">Need to confirm the mechanism of your idea</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#need-to-connect-with-real-experiments">Need to connect with real experiments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerics-for-many-body-physics-is-non-trivial">Numerics for many body physics is non-trivial!</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-data-to-convey-what-you-mean">Generate data to convey what you mean</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#my-point-of-view-of-numerical-approaches">My point of view of numerical approaches</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-of-numerical-loading">Level of numerical loading</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-well-structured-general-purpose-language">Simple, well-structured, general-purpose language</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level">High-level</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive">Interactive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#speed">Speed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vibrant-community">Vibrant community</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rich-scientific-computing-libraries">Rich scientific computing libraries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessible-for-everyone-no-need-to-pay-money">Accessible for everyone. No need to pay money</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-python-key-components">Scientific Python Key Components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-workflow">Jupyter Workflow</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-primary-workflows">Two primary workflows:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-usage">Notebook Usage</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-objects">Variables and Objects</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overloading">Overloading</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-as-references">Variables as References</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-objects">Types of Objects</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-types">Basic Types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-scientific-types">Common Scientific Types</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-types-numeric">Basic Types: Numeric</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#careful-with-integer-division">Careful with integer division!</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-types-strings">Basic Types: Strings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-types-lists">Basic Types: Lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-types-dictionaries">Basic Types: Dictionaries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-types-tuples">Basic Types: Tuples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">Control Flow</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else">If/elif/else</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For Loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">While Loops</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-are-objects">Functions are Objects</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Yi-Ping Huang (黃一平)
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2022.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
     </div>
-  </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Yi-Ping Huang (黃一平)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>
